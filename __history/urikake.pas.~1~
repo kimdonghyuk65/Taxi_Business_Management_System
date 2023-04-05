@@ -1,0 +1,60 @@
+unit urikake;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus, Vcl.ComCtrls, Vcl.StdCtrls,
+  Vcl.ExtCtrls;
+
+type
+  TurikakeForm = class(TForm)
+    Panel1: TPanel;
+    Bevel1: TBevel;
+    Bevel2: TBevel;
+    Label2: TLabel;
+    Label1: TLabel;
+    meisai_urikakeButton: TButton;
+    seikyuButton: TButton;
+    seikyu_listButton: TButton;
+    mishuButton: TButton;
+    meisai_nyukinButton: TButton;
+    joumu_kintaButton: TButton;
+    nyukinButton: TButton;
+    Button1: TButton;
+    StatusBar: TStatusBar;
+    MainMenu: TMainMenu;
+    File1: TMenuItem;
+    csv_out: TMenuItem;
+    Y1: TMenuItem;
+    yusou_nippou: TMenuItem;
+    yusou_shukei: TMenuItem;
+    yusou_joumu_zisseki: TMenuItem;
+    yusou_sharyou_zisseki: TMenuItem;
+    yusou_taihi: TMenuItem;
+    yusou_joumu_kintai: TMenuItem;
+    yusou_kintai: TMenuItem;
+    kintai_shukei: TMenuItem;
+    N5: TMenuItem;
+    shoki_kihon: TMenuItem;
+    shoki_pattern: TMenuItem;
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  urikakeForm: TurikakeForm;
+
+implementation
+
+{$R *.dfm}
+
+procedure TurikakeForm.Button1Click(Sender: TObject);
+begin
+ close
+end;
+
+end.

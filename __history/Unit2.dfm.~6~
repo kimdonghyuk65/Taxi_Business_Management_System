@@ -1,0 +1,48 @@
+object Form2: TForm2
+  Left = 0
+  Top = 0
+  Caption = 'Form2'
+  ClientHeight = 231
+  ClientWidth = 505
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object DBEdit1: TDBEdit
+    Left = 216
+    Top = 40
+    Width = 121
+    Height = 21
+    DataField = 'Field1'
+    DataSource = DataSource1
+    TabOrder = 0
+  end
+  object FDConnection1: TFDConnection
+    Params.Strings = (
+      
+        'Database=C:\Users\LG gram\Documents\Embarcadero\Studio\Taxi\Taxi' +
+        '.db'
+      'DriverID=SQLite')
+    Connected = True
+    Left = 332
+    Top = 128
+  end
+  object FDQuery1: TFDQuery
+    Connection = FDConnection1
+    SQL.Strings = (
+      'select Field1'
+      'from test')
+    Left = 140
+    Top = 128
+  end
+  object DataSource1: TDataSource
+    DataSet = FDQuery1
+    Left = 164
+    Top = 48
+  end
+end

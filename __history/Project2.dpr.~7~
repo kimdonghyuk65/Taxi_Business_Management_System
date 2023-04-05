@@ -1,0 +1,24 @@
+program Project2;
+
+uses
+  Vcl.Forms,
+  shoki in 'shoki.pas' {shokiForm},
+  taxi_main in 'taxi_main.pas' {taxi_mainForm},
+  urikake in 'urikake.pas' {urikakeForm},
+  yusou in 'yusou.pas' {yusouForm},
+  salary_period in 'salary_period.pas' {salary_periodForm},
+  yusou_nippou in 'yusou_nippou.pas' {yusou_nippouForm};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(Ttaxi_mainForm, taxi_mainForm);
+  Application.CreateForm(TshokiForm, shokiForm);
+  Application.CreateForm(TurikakeForm, urikakeForm);
+  Application.CreateForm(TyusouForm, yusouForm);
+  Application.CreateForm(Tsalary_periodForm, salary_periodForm);
+  Application.CreateForm(Tyusou_nippouForm, yusou_nippouForm);
+  Application.Run;
+end.

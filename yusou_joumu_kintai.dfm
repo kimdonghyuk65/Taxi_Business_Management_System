@@ -1,0 +1,273 @@
+object yusou_joumu_kintaiForm: Tyusou_joumu_kintaiForm
+  Left = 0
+  Top = 0
+  Caption = #20055#21209#21729#21029#21220#24608#23455#32318#34920
+  ClientHeight = 316
+  ClientWidth = 488
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poMainFormCenter
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 488
+    Height = 256
+    Align = alClient
+    Alignment = taLeftJustify
+    Font.Charset = SHIFTJIS_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -15
+    Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 0
+    TabStop = True
+    object serchGroupBox: TGroupBox
+      Left = 20
+      Top = 24
+      Width = 438
+      Height = 161
+      Caption = #26908#32034#26465#20214
+      Color = clScrollBar
+      ParentColor = False
+      TabOrder = 0
+      TabStop = True
+      object Label5: TLabel
+        Left = 175
+        Top = 31
+        Width = 60
+        Height = 15
+        Caption = #65374' '#26399#38291#65298
+        Font.Charset = SHIFTJIS_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -15
+        Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+        Font.Style = []
+        ParentFont = False
+        Layout = tlCenter
+      end
+      object Label4: TLabel
+        Left = 207
+        Top = 71
+        Width = 70
+        Height = 15
+        Caption = #65374#20055#21209#21729#65298
+        Font.Charset = SHIFTJIS_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -15
+        Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+        Font.Style = []
+        ParentFont = False
+        Layout = tlCenter
+      end
+      object Label2: TLabel
+        Left = 28
+        Top = 31
+        Width = 40
+        Height = 15
+        Caption = #26399#38291#65297
+        Font.Charset = SHIFTJIS_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -15
+        Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+        Font.Style = []
+        ParentFont = False
+        Layout = tlCenter
+      end
+      object Label1: TLabel
+        Left = 13
+        Top = 71
+        Width = 55
+        Height = 15
+        Alignment = taCenter
+        Caption = #20055#21209#21729#65297
+        Font.Charset = SHIFTJIS_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -15
+        Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+        Font.Style = []
+        ParentFont = False
+        Layout = tlCenter
+      end
+      object Label3: TLabel
+        Left = 8
+        Top = 113
+        Width = 60
+        Height = 15
+        Caption = #21220#21209#21306#20998
+        Font.Charset = SHIFTJIS_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -15
+        Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+        Font.Style = []
+        ParentFont = False
+        Layout = tlCenter
+      end
+      object period2MaskEdit: TMaskEdit
+        Left = 239
+        Top = 27
+        Width = 99
+        Height = 23
+        TabStop = False
+        Enabled = False
+        EditMask = '!9999/99/99;1;_'
+        Font.Charset = SHIFTJIS_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -15
+        Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+        Font.Style = []
+        ImeMode = imDisable
+        MaxLength = 10
+        ParentFont = False
+        TabOrder = 1
+        Text = '0000/00/00'
+      end
+      object period1MaskEdit: TMaskEdit
+        Left = 70
+        Top = 27
+        Width = 99
+        Height = 23
+        EditMask = '!9999/99/99;1;_'
+        Font.Charset = SHIFTJIS_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -15
+        Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+        Font.Style = []
+        ImeMode = imDisable
+        MaxLength = 10
+        ParentFont = False
+        TabOrder = 0
+        Text = '0000/00/00'
+      end
+      object serviceDBLookupComboBox: TDBLookupComboBox
+        Left = 70
+        Top = 109
+        Width = 193
+        Height = 23
+        Font.Charset = SHIFTJIS_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -15
+        Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+        Font.Style = []
+        KeyField = 'service_class_code'
+        ListField = 'service_class_name'
+        ListSource = serviceDatasoce
+        ParentFont = False
+        TabOrder = 4
+      end
+      object Button3: TButton
+        Left = 269
+        Top = 109
+        Width = 105
+        Height = 22
+        Caption = #21220#21209#21306#20998#12463#12522#12450
+        TabOrder = 5
+        TabStop = False
+      end
+      object employee1Edit: TEdit
+        Tag = 1
+        Left = 70
+        Top = 66
+        Width = 45
+        Height = 23
+        Hint = #65318#65297#65298#12434#25276#19979#12377#12427#12392#20055#21209#21729#12467#12540#12489#12398#21442#29031#12364#20986#26469#12414#12377
+        ImeMode = imDisable
+        ParentShowHint = False
+        ShowHint = True
+        TabOrder = 2
+      end
+      object employee1StaticText: TStaticText
+        Left = 115
+        Top = 66
+        Width = 87
+        Height = 23
+        AutoSize = False
+        BevelKind = bkFlat
+        Color = clInfoBk
+        ParentColor = False
+        TabOrder = 6
+      end
+      object employee2Edit: TEdit
+        Tag = 1
+        Left = 282
+        Top = 66
+        Width = 45
+        Height = 23
+        Hint = #65318#65297#65298#12434#25276#19979#12377#12427#12392#20055#21209#21729#12467#12540#12489#12398#21442#29031#12364#20986#26469#12414#12377
+        TabStop = False
+        ImeMode = imDisable
+        ParentShowHint = False
+        ShowHint = True
+        TabOrder = 3
+      end
+      object employee2StaticText: TStaticText
+        Left = 327
+        Top = 66
+        Width = 87
+        Height = 23
+        AutoSize = False
+        BevelKind = bkFlat
+        Color = clInfoBk
+        ParentColor = False
+        TabOrder = 7
+      end
+    end
+    object okButton: TButton
+      Left = 296
+      Top = 197
+      Width = 75
+      Height = 25
+      Caption = #26908#32034
+      Font.Charset = SHIFTJIS_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 1
+    end
+    object cancelButton: TButton
+      Left = 382
+      Top = 197
+      Width = 75
+      Height = 25
+      Caption = #12463#12522#12450
+      TabOrder = 2
+    end
+  end
+  object Panel2: TPanel
+    Left = 0
+    Top = 256
+    Width = 488
+    Height = 41
+    Align = alBottom
+    TabOrder = 1
+    object closeButton: TButton
+      Left = 8
+      Top = 8
+      Width = 75
+      Height = 25
+      Caption = #38281#12376#12427
+      TabOrder = 0
+    end
+  end
+  object StatusBar: TStatusBar
+    Left = 0
+    Top = 297
+    Width = 488
+    Height = 19
+    Panels = <>
+    SimplePanel = True
+  end
+  object serviceDatasoce: TDataSource
+    Left = 128
+    Top = 200
+  end
+end

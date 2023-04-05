@@ -1,0 +1,736 @@
+object FormEducation: TFormEducation
+  Left = 0
+  Top = 0
+  Caption = 'FormEducation'
+  ClientHeight = 700
+  ClientWidth = 689
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Panel2: TPanel
+    Left = 0
+    Top = 41
+    Width = 689
+    Height = 640
+    Align = alClient
+    TabOrder = 0
+    object LedgerGroupBox: TGroupBox
+      Left = 15
+      Top = 69
+      Width = 649
+      Height = 244
+      Caption = #23455#26045#20107#38917
+      TabOrder = 1
+      object Label1: TLabel
+        Left = 8
+        Top = 21
+        Width = 80
+        Height = 23
+        Alignment = taCenter
+        AutoSize = False
+        Caption = #23455#26045#24180#26376#26085
+        Color = clTeal
+        Font.Charset = SHIFTJIS_CHARSET
+        Font.Color = clWhite
+        Font.Height = -15
+        Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+        Font.Style = []
+        ParentColor = False
+        ParentFont = False
+        Transparent = False
+        Layout = tlCenter
+      end
+      object Label2: TLabel
+        Left = 8
+        Top = 45
+        Width = 80
+        Height = 23
+        Alignment = taCenter
+        AutoSize = False
+        Caption = #26178#12288#12288#38291
+        Color = clTeal
+        Font.Charset = SHIFTJIS_CHARSET
+        Font.Color = clWhite
+        Font.Height = -15
+        Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+        Font.Style = []
+        ParentColor = False
+        ParentFont = False
+        Transparent = False
+        Layout = tlCenter
+      end
+      object Label3: TLabel
+        Left = 187
+        Top = 49
+        Width = 12
+        Height = 13
+        Caption = #65374
+      end
+      object Label4: TLabel
+        Left = 312
+        Top = 45
+        Width = 80
+        Height = 23
+        Alignment = taCenter
+        AutoSize = False
+        Caption = #22580#12288#12288#25152
+        Color = clTeal
+        Font.Charset = SHIFTJIS_CHARSET
+        Font.Color = clWhite
+        Font.Height = -15
+        Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+        Font.Style = []
+        ParentColor = False
+        ParentFont = False
+        Transparent = False
+        Layout = tlCenter
+      end
+      object Label5: TLabel
+        Left = 8
+        Top = 69
+        Width = 80
+        Height = 23
+        Alignment = taCenter
+        AutoSize = False
+        Caption = #23455#26045#32773#65297
+        Color = clTeal
+        Font.Charset = SHIFTJIS_CHARSET
+        Font.Color = clWhite
+        Font.Height = -15
+        Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+        Font.Style = []
+        ParentColor = False
+        ParentFont = False
+        Transparent = False
+        Layout = tlCenter
+      end
+      object Label6: TLabel
+        Left = 8
+        Top = 93
+        Width = 80
+        Height = 23
+        Alignment = taCenter
+        AutoSize = False
+        Caption = #21942#26989#25152
+        Color = clTeal
+        Font.Charset = SHIFTJIS_CHARSET
+        Font.Color = clWhite
+        Font.Height = -15
+        Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+        Font.Style = []
+        ParentColor = False
+        ParentFont = False
+        Transparent = False
+        Layout = tlCenter
+      end
+      object Label10: TLabel
+        Left = 312
+        Top = 69
+        Width = 80
+        Height = 23
+        Alignment = taCenter
+        AutoSize = False
+        Caption = #23455#26045#32773#65298
+        Color = clTeal
+        Font.Charset = SHIFTJIS_CHARSET
+        Font.Color = clWhite
+        Font.Height = -15
+        Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+        Font.Style = []
+        ParentColor = False
+        ParentFont = False
+        Transparent = False
+        Layout = tlCenter
+      end
+      object Label9: TLabel
+        Left = 312
+        Top = 21
+        Width = 80
+        Height = 23
+        Alignment = taCenter
+        AutoSize = False
+        Caption = #23455#26045#21306#20998
+        Color = clTeal
+        Font.Charset = SHIFTJIS_CHARSET
+        Font.Color = clWhite
+        Font.Height = -15
+        Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+        Font.Style = []
+        ParentColor = False
+        ParentFont = False
+        Transparent = False
+        Layout = tlCenter
+      end
+      object GET_EXECUTOR1DBText: TDBText
+        Left = 138
+        Top = 69
+        Width = 134
+        Height = 23
+        Color = clInfoBk
+        DataField = 'GET_EXECUTOR1'
+        DataSource = LedgerDataSource
+        ParentColor = False
+      end
+      object GET_EXECUTOR2DBText: TDBText
+        Left = 442
+        Top = 69
+        Width = 134
+        Height = 23
+        Color = clInfoBk
+        DataField = 'GET_EXECUTOR2'
+        DataSource = LedgerDataSource
+        ParentColor = False
+      end
+      object execution_dayDBEdit: TDBEdit
+        Left = 89
+        Top = 21
+        Width = 121
+        Height = 21
+        DataField = 'execution_day'
+        DataSource = LedgerDataSource
+        ImeMode = imDisable
+        TabOrder = 0
+      end
+      object start_timeDBEdit: TDBEdit
+        Left = 89
+        Top = 45
+        Width = 88
+        Height = 21
+        DataField = 'start_time'
+        DataSource = LedgerDataSource
+        ImeMode = imDisable
+        TabOrder = 2
+      end
+      object end_timeDBEdit: TDBEdit
+        Left = 209
+        Top = 45
+        Width = 88
+        Height = 21
+        DataField = 'end_time'
+        DataSource = LedgerDataSource
+        ImeMode = imDisable
+        TabOrder = 3
+      end
+      object placeDBEdit: TDBEdit
+        Left = 393
+        Top = 45
+        Width = 224
+        Height = 21
+        DataField = 'place'
+        DataSource = LedgerDataSource
+        TabOrder = 4
+      end
+      object executor1DBEdit: TDBEdit
+        Tag = 1
+        Left = 89
+        Top = 69
+        Width = 48
+        Height = 21
+        Hint = #65318#65297#65298#12434#25276#19979#12377#12427#12392#20055#21209#21729#12467#12540#12489#12398#21442#29031#12364#20986#26469#12414#12377
+        DataField = 'executor1'
+        DataSource = LedgerDataSource
+        ImeMode = imDisable
+        ParentShowHint = False
+        ShowHint = True
+        TabOrder = 5
+      end
+      object executor2DBEdit: TDBEdit
+        Tag = 1
+        Left = 393
+        Top = 69
+        Width = 48
+        Height = 21
+        Hint = #65318#65297#65298#12434#25276#19979#12377#12427#12392#20055#21209#21729#12467#12540#12489#12398#21442#29031#12364#20986#26469#12414#12377
+        DataField = 'executor2'
+        DataSource = LedgerDataSource
+        ImeMode = imDisable
+        ParentShowHint = False
+        ShowHint = True
+        TabOrder = 6
+      end
+      object C_r1Button: TButton
+        Left = 274
+        Top = 69
+        Width = 23
+        Height = 23
+        Caption = #8230
+        TabOrder = 10
+        TabStop = False
+      end
+      object C_r2Button: TButton
+        Left = 578
+        Top = 69
+        Width = 23
+        Height = 23
+        Caption = #8230
+        TabOrder = 11
+        TabStop = False
+      end
+      object LedgerDBGrid: TDBGrid
+        Left = 8
+        Top = 117
+        Width = 633
+        Height = 91
+        TabStop = False
+        DataSource = Ledger_GridDataSource
+        Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit]
+        TabOrder = 12
+        TitleFont.Charset = DEFAULT_CHARSET
+        TitleFont.Color = clWindowText
+        TitleFont.Height = -11
+        TitleFont.Name = 'Tahoma'
+        TitleFont.Style = []
+        Columns = <
+          item
+            Expanded = False
+            FieldName = 'execution_day'
+            Width = 90
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'start_time'
+            Width = 65
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'end_time'
+            Width = 65
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'place'
+            Width = 250
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'GET_OFFICE'
+            Width = 100
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'execution_class'
+            Width = 65
+            Visible = True
+          end>
+      end
+      object Post_ledgerButton: TButton
+        Left = 477
+        Top = 212
+        Width = 75
+        Height = 25
+        Caption = #30331#12288#37682
+        TabOrder = 8
+      end
+      object Cancel_ledgerButton: TButton
+        Left = 565
+        Top = 212
+        Width = 75
+        Height = 25
+        Caption = #12461#12515#12531#12475#12523
+        TabOrder = 9
+      end
+      object LedgerDBNavigator: TDBNavigator
+        Left = 9
+        Top = 209
+        Width = 152
+        Height = 18
+        DataSource = Ledger_GridDataSource
+        VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast]
+        TabOrder = 13
+      end
+      object Get_OfficeDBLookupComboBox: TDBLookupComboBox
+        Left = 89
+        Top = 93
+        Width = 184
+        Height = 21
+        DataField = 'office'
+        DataSource = LedgerDataSource
+        KeyField = 'OFFICE_CODE'
+        ListField = 'OFFICE_NAME'
+        ListSource = Get_OfficeDataSource
+        TabOrder = 7
+      end
+      object execution_classDBRadioGroup: TDBRadioGroup
+        Left = 395
+        Top = 8
+        Width = 139
+        Height = 35
+        Columns = 2
+        DataField = 'execution_class'
+        DataSource = LedgerDataSource
+        Items.Strings = (
+          #26032#20154
+          #36890#24120)
+        TabOrder = 1
+        TabStop = True
+        Values.Strings = (
+          '0'
+          '1'
+          '')
+      end
+    end
+    object EmpGroupBox: TGroupBox
+      Left = 15
+      Top = 508
+      Width = 649
+      Height = 157
+      Caption = #21442#21152#32773
+      TabOrder = 3
+      object Label7: TLabel
+        Left = 8
+        Top = 24
+        Width = 80
+        Height = 23
+        Alignment = taCenter
+        AutoSize = False
+        Caption = #27663#12288#12288#21517
+        Color = clTeal
+        Font.Charset = SHIFTJIS_CHARSET
+        Font.Color = clWhite
+        Font.Height = -15
+        Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+        Font.Style = []
+        ParentColor = False
+        ParentFont = False
+        Transparent = False
+        Layout = tlCenter
+      end
+      object EMPLOYEE_NAMEDBText: TDBText
+        Left = 138
+        Top = 24
+        Width = 134
+        Height = 23
+        Color = clInfoBk
+        DataField = 'EMPLOYEE_NAME'
+        DataSource = EmpDataSource
+        ParentColor = False
+      end
+      object EmpDBGrid: TDBGrid
+        Left = 384
+        Top = 16
+        Width = 257
+        Height = 114
+        TabStop = False
+        DataSource = EmpDataSource
+        Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit]
+        TabOrder = 5
+        TitleFont.Charset = DEFAULT_CHARSET
+        TitleFont.Color = clWindowText
+        TitleFont.Height = -11
+        TitleFont.Name = 'Tahoma'
+        TitleFont.Style = []
+        Columns = <
+          item
+            Expanded = False
+            FieldName = 'EMPLOYEE_NAME'
+            Width = 200
+            Visible = True
+          end>
+      end
+      object employee_codeDBEdit: TDBEdit
+        Tag = 1
+        Left = 89
+        Top = 24
+        Width = 48
+        Height = 21
+        Hint = #65318#65297#65298#12434#25276#19979#12377#12427#12392#20055#21209#21729#12467#12540#12489#12398#21442#29031#12364#20986#26469#12414#12377
+        DataField = 'employee_code'
+        DataSource = EmpDataSource
+        ImeMode = imDisable
+        ParentShowHint = False
+        ShowHint = True
+        TabOrder = 0
+      end
+      object Insert_empButton: TButton
+        Left = 8
+        Top = 61
+        Width = 75
+        Height = 25
+        Caption = #36861#12288#21152
+        TabOrder = 1
+      end
+      object Post_empButton: TButton
+        Left = 104
+        Top = 61
+        Width = 75
+        Height = 25
+        Caption = #30331#12288#37682
+        TabOrder = 2
+      end
+      object Cancel_empButton: TButton
+        Left = 184
+        Top = 61
+        Width = 75
+        Height = 25
+        Caption = #12461#12515#12531#12475#12523
+        TabOrder = 3
+      end
+      object Delete_empButton: TButton
+        Left = 264
+        Top = 61
+        Width = 75
+        Height = 25
+        Caption = #21066#12288#38500
+        TabOrder = 4
+      end
+      object C_r3Button: TButton
+        Left = 274
+        Top = 24
+        Width = 23
+        Height = 23
+        Caption = #8230
+        TabOrder = 6
+        TabStop = False
+      end
+      object EmpDBNavigator: TDBNavigator
+        Left = 488
+        Top = 132
+        Width = 152
+        Height = 18
+        DataSource = EmpDataSource
+        VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast]
+        TabOrder = 7
+      end
+    end
+    object searchGroupBox: TGroupBox
+      Left = 15
+      Top = 8
+      Width = 647
+      Height = 57
+      Caption = #26908#32034#26465#20214
+      Color = clScrollBar
+      ParentColor = False
+      TabOrder = 0
+      Visible = False
+      object Label11: TLabel
+        Left = 8
+        Top = 21
+        Width = 80
+        Height = 23
+        Alignment = taCenter
+        AutoSize = False
+        Caption = #23455#26045#24180#26376#26085
+        Color = clTeal
+        Font.Charset = SHIFTJIS_CHARSET
+        Font.Color = clWhite
+        Font.Height = -15
+        Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+        Font.Style = []
+        ParentColor = False
+        ParentFont = False
+        Transparent = False
+        Layout = tlCenter
+      end
+      object Label8: TLabel
+        Left = 185
+        Top = 26
+        Width = 12
+        Height = 13
+        Caption = #65374
+      end
+      object Exe_day1MaskEdit: TMaskEdit
+        Left = 89
+        Top = 21
+        Width = 91
+        Height = 21
+        EditMask = '!9999/99/99;1;_'
+        ImeMode = imDisable
+        MaxLength = 10
+        TabOrder = 0
+        Text = '0000/00/00'
+      end
+      object Button16: TButton
+        Left = 558
+        Top = 21
+        Width = 75
+        Height = 25
+        Caption = #27770#12288#23450
+        TabOrder = 2
+      end
+      object Exe_day2MaskEdit: TMaskEdit
+        Left = 201
+        Top = 21
+        Width = 91
+        Height = 21
+        EditMask = '!9999/99/99;1;_'
+        ImeMode = imDisable
+        MaxLength = 10
+        TabOrder = 1
+        Text = '0000/00/00'
+      end
+    end
+    object InstGroupBox: TGroupBox
+      Left = 15
+      Top = 318
+      Width = 649
+      Height = 187
+      Caption = #25351#23566#20869#23481#65288#26368#22823#65297#65296#38917#30446#12414#12391#65289
+      TabOrder = 2
+      object InstDBGrid: TDBGrid
+        Left = 8
+        Top = 35
+        Width = 631
+        Height = 113
+        TabStop = False
+        DataSource = InstDataSource
+        TabOrder = 4
+        TitleFont.Charset = DEFAULT_CHARSET
+        TitleFont.Color = clWindowText
+        TitleFont.Height = -11
+        TitleFont.Name = 'Tahoma'
+        TitleFont.Style = []
+        Columns = <
+          item
+            Expanded = False
+            FieldName = 'INST_LIST'
+            Width = 600
+            Visible = True
+          end>
+      end
+      object Insert_instButton: TButton
+        Left = 8
+        Top = 155
+        Width = 75
+        Height = 25
+        Caption = #36861#12288#21152
+        TabOrder = 0
+      end
+      object Delete_instButton: TButton
+        Left = 302
+        Top = 155
+        Width = 75
+        Height = 25
+        Caption = #21066#38500
+        TabOrder = 3
+      end
+      object Post_instButton: TButton
+        Left = 128
+        Top = 155
+        Width = 75
+        Height = 25
+        Caption = #30331#12288#37682
+        TabOrder = 1
+      end
+      object Cancel_instButton: TButton
+        Left = 216
+        Top = 155
+        Width = 75
+        Height = 25
+        Caption = #12461#12515#12531#12475#12523
+        TabOrder = 2
+      end
+      object InstDBNavigator: TDBNavigator
+        Left = 488
+        Top = 150
+        Width = 152
+        Height = 18
+        DataSource = InstDataSource
+        VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast]
+        TabOrder = 5
+      end
+      object Inst_List_CopyButton: TButton
+        Left = 386
+        Top = 14
+        Width = 242
+        Height = 19
+        Caption = #20104#23450#34920#12363#12425#25351#23566#20869#23481#12434#12467#12500#12540#12377#12427
+        TabOrder = 6
+      end
+    end
+  end
+  object Panel3: TPanel
+    Left = 0
+    Top = 0
+    Width = 689
+    Height = 41
+    Align = alTop
+    TabOrder = 1
+    object NewButton: TButton
+      Left = 15
+      Top = 8
+      Width = 75
+      Height = 25
+      Caption = #26032#12288#35215
+      TabOrder = 0
+    end
+    object EditButton: TButton
+      Left = 103
+      Top = 8
+      Width = 75
+      Height = 25
+      Caption = #20462#12288#27491
+      TabOrder = 1
+    end
+    object DeleteButton: TButton
+      Left = 191
+      Top = 8
+      Width = 75
+      Height = 25
+      Caption = #21066#12288#38500
+      TabOrder = 2
+    end
+    object CloseButton: TButton
+      Left = 591
+      Top = 8
+      Width = 75
+      Height = 25
+      Caption = #38281#12376#12427
+      TabOrder = 3
+    end
+    object Ledger_printButton: TButton
+      Left = 303
+      Top = 8
+      Width = 113
+      Height = 25
+      Caption = #25945#32946#35352#37682#12288#20986#21147
+      TabOrder = 4
+    end
+    object Record_printButton: TButton
+      Left = 423
+      Top = 8
+      Width = 113
+      Height = 25
+      Caption = #25945#32946#21488#24115#12288#20986#21147
+      TabOrder = 5
+    end
+  end
+  object StatusBar: TStatusBar
+    Left = 0
+    Top = 681
+    Width = 689
+    Height = 19
+    Panels = <>
+    SimplePanel = True
+  end
+  object LedgerDataSource: TDataSource
+    Left = 477
+    Top = 120
+  end
+  object InstDataSource: TDataSource
+    Left = 477
+    Top = 203
+  end
+  object EmpDataSource: TDataSource
+    Left = 408
+    Top = 203
+  end
+  object Ledger_GridDataSource: TDataSource
+    Left = 477
+    Top = 203
+  end
+  object Get_OfficeDataSource: TDataSource
+    Left = 288
+    Top = 200
+  end
+end

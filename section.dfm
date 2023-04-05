@@ -1,0 +1,188 @@
+object sectionForm: TsectionForm
+  Left = 0
+  Top = 0
+  Caption = #32887#12288#31278
+  ClientHeight = 380
+  ClientWidth = 345
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poMainFormCenter
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 345
+    Height = 343
+    Align = alClient
+    Font.Charset = SHIFTJIS_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -15
+    Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 0
+    TabStop = True
+    ExplicitTop = -75
+    ExplicitWidth = 307
+    ExplicitHeight = 306
+    object DBText1: TDBText
+      Left = 83
+      Top = 14
+      Width = 46
+      Height = 23
+      DataField = 'section_code'
+      DataSource = sectionDataSource
+    end
+    object Label1: TLabel
+      Left = 10
+      Top = 14
+      Width = 70
+      Height = 23
+      Alignment = taCenter
+      AutoSize = False
+      Caption = #32887#31278#12467#12540#12489
+      Color = clTeal
+      Font.Charset = SHIFTJIS_CHARSET
+      Font.Color = clWhite
+      Font.Height = -15
+      Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+      Font.Style = []
+      ParentColor = False
+      ParentFont = False
+      Transparent = False
+      Layout = tlCenter
+    end
+    object Bevel1: TBevel
+      Left = 81
+      Top = 14
+      Width = 57
+      Height = 23
+    end
+    object Label2: TLabel
+      Left = 10
+      Top = 46
+      Width = 70
+      Height = 23
+      Alignment = taCenter
+      AutoSize = False
+      Caption = #32887#31278#21517
+      Color = clTeal
+      Font.Charset = SHIFTJIS_CHARSET
+      Font.Color = clWhite
+      Font.Height = -15
+      Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+      Font.Style = []
+      ParentColor = False
+      ParentFont = False
+      Transparent = False
+      Layout = tlCenter
+    end
+    object sectionDBEdit: TDBEdit
+      Left = 81
+      Top = 46
+      Width = 135
+      Height = 23
+      AutoSize = False
+      DataField = 'section_name'
+      DataSource = sectionDataSource
+      TabOrder = 1
+    end
+    object DBGrid1: TDBGrid
+      Left = 1
+      Top = 111
+      Width = 306
+      Height = 166
+      TabStop = False
+      DataSource = sectionDataSource
+      Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit]
+      ReadOnly = True
+      TabOrder = 4
+      TitleFont.Charset = SHIFTJIS_CHARSET
+      TitleFont.Color = clWindowText
+      TitleFont.Height = -15
+      TitleFont.Name = #65325#65331' '#65328#12468#12471#12483#12463
+      TitleFont.Style = []
+      Columns = <
+        item
+          Expanded = False
+          FieldName = 'section_code'
+          Title.Caption = #12467#12540#12489
+          Width = 47
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'section_name'
+          Visible = True
+        end>
+    end
+    object DBNavigator1: TDBNavigator
+      Left = 116
+      Top = 280
+      Width = 195
+      Height = 26
+      DataSource = sectionDataSource
+      VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast, nbDelete]
+      TabOrder = 5
+    end
+    object cancelButton: TButton
+      Left = 144
+      Top = 80
+      Width = 75
+      Height = 25
+      Caption = #12461#12515#12531#12475#12523
+      TabOrder = 3
+    end
+    object postButton: TButton
+      Left = 227
+      Top = 80
+      Width = 75
+      Height = 25
+      Caption = #30331#12288#37682
+      TabOrder = 2
+    end
+    object newButton: TButton
+      Left = 227
+      Top = 8
+      Width = 75
+      Height = 25
+      Caption = #26032#12288#35215
+      TabOrder = 0
+    end
+  end
+  object buttonPanel: TPanel
+    Left = 0
+    Top = 343
+    Width = 345
+    Height = 37
+    Align = alBottom
+    Font.Charset = SHIFTJIS_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -15
+    Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 1
+    TabStop = True
+    ExplicitTop = 194
+    ExplicitWidth = 307
+    object closeButton: TButton
+      Left = 8
+      Top = 6
+      Width = 75
+      Height = 25
+      Caption = #38281#12376#12427
+      TabOrder = 0
+    end
+  end
+  object sectionDataSource: TDataSource
+    Left = 16
+    Top = 72
+  end
+end

@@ -1,0 +1,103 @@
+﻿unit place;
+
+interface
+
+uses
+Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.StdCtrls, Vcl.DBCtrls,
+Vcl.Grids, Vcl.DBGrids, Vcl.Mask, Vcl.ExtCtrls, DBConnectionModule, FireDAC.Stan.Param;
+
+type
+TplaceForm = class(TForm)
+Panel1: TPanel;
+Label1: TLabel;
+Label2: TLabel;
+Label3: TLabel;
+nameDBEdit: TDBEdit;
+DBGrid1: TDBGrid;
+DBNavigator1: TDBNavigator;
+huriganaDBEdit: TDBEdit;
+cancelButton: TButton;
+postButton: TButton;
+newButton: TButton;
+codeDBEdit: TDBEdit;
+buttonPanel: TPanel;
+closeButton: TButton;
+printButton: TButton;
+placeDataSource: TDataSource;
+procedure postButtonClick(Sender: TObject);
+procedure FormCreate(Sender: TObject);
+procedure DBGrid1CellClick(Column: TColumn);
+procedure cancelButtonClick(Sender: TObject);
+procedure closeButtonClick(Sender: TObject);
+private
+{ Private declarations }
+public
+{ Public declarations }
+procedure LoadData;
+end;
+
+var
+placeForm: TplaceForm;
+
+implementation
+
+{$R *.dfm}
+
+procedure TplaceForm.postButtonClick(Sender: TObject);
+  begin
+  if placeDataSource.DataSet.State = dsInsert then
+  begin
+  placeDataSource.DataSet.Post;
+  LoadData;
+  ShowMessage('저장되었습니다.');
+end
+else if placeDataSource.DataSet.State = dsEdit then
+  begin
+  placeDataSource.DataSet.Post;
+  LoadData;
+  ShowMessage('저장되었습니다.');
+  end;
+end;
+
+procedure TplaceForm.LoadData;
+begin
+  DBConnModule.ConnectDB;
+  DBConnModule.ExecuteQuery1('SELECT * FROM PLACE');
+  placeDataSource.DataSet := DBConnModule.FDQuery2;
+  placeDataSource.DataSet.Open; // 데이터셋을 열어주는 코드를 추가합니다
+end;
+
+procedure TplaceForm.FormCreate(Sender: TObject);
+begin
+postButton.Enabled := False;
+cancelButton.Enabled := False;
+LoadData;
+end;
+
+procedure TplaceForm.DBGrid1CellClick(Column: TColumn);
+begin
+if not (placeDataSource.DataSet.State in [dsInsert, dsEdit]) then
+begin
+newButton.Enabled := False;
+postButton.Enabled := True;
+cancelButton.Enabled := True;
+end;
+end;
+
+procedure TplaceForm.cancelButtonClick(Sender: TObject);
+begin
+newButton.Enabled := True;
+postButton.Enabled := False;
+cancelButton.Enabled := False;
+LoadData;
+end;
+
+procedure TplaceForm.closeButtonClick(Sender: TObject);
+begin
+Close;
+
+
+end;
+
+end.

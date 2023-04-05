@@ -1,0 +1,157 @@
+﻿unit yusou;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus, Vcl.ComCtrls, Vcl.StdCtrls,
+  Vcl.ExtCtrls,yusou_nippou, yusou_shukei,yusou_taihi,yusou_joumu_zisseki,yusou_sharyou_zisseki,yusou_joumu_kintai,
+  yusou_houkoku, yusou_joumu_tuki;
+
+type
+  TyusouForm = class(TForm)
+    Panel1: TPanel;
+    Bevel1: TBevel;
+    Bevel2: TBevel;
+    Label2: TLabel;
+    Label1: TLabel;
+    shukeiButton: TButton;
+    sharyou_zissekiButton: TButton;
+    taihiButton: TButton;
+    nippouButton: TButton;
+    joumu_zissekiButton: TButton;
+    joumu_kintaiButton: TButton;
+    joumu_tukiButton: TButton;
+    baskButton: TButton;
+    zissekiButton: TButton;
+    kintai_shukeiButton: TButton;
+    StatusBar: TStatusBar;
+    MainMenu: TMainMenu;
+    File1: TMenuItem;
+    csv_out: TMenuItem;
+    N3: TMenuItem;
+    urikake_mishu: TMenuItem;
+    urikake_nyukin: TMenuItem;
+    urikake_meisai_urikake: TMenuItem;
+    urikake_meisai_nyukin: TMenuItem;
+    urikake_seikyu: TMenuItem;
+    urikake_seikyu_list: TMenuItem;
+    urikake_zandaka_list: TMenuItem;
+    N5: TMenuItem;
+    shoki_kihon: TMenuItem;
+    shoki_pattern: TMenuItem;
+    procedure baskButtonClick(Sender: TObject);
+    procedure nippouButtonClick(Sender: TObject);
+    procedure shukeiButtonClick(Sender: TObject);
+    procedure taihiButtonClick(Sender: TObject);
+    procedure joumu_zissekiButtonClick(Sender: TObject);
+    procedure sharyou_zissekiButtonClick(Sender: TObject);
+    procedure zissekiButtonClick(Sender: TObject);
+    procedure joumu_tukiButtonClick(Sender: TObject);
+    procedure joumu_kintaiButtonClick(Sender: TObject);
+
+//    procedure FormShow(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  yusouForm: TyusouForm;
+
+implementation
+
+//uses taxi_main;
+{$R *.dfm}
+
+procedure TyusouForm.baskButtonClick(Sender: TObject);
+begin
+ close
+end;
+
+//procedure TyusouForm.FormShow(Sender: TObject);
+// var taxi_mainForm: Ttaxi_mainForm;
+//begin
+//   taxi_mainForm.Enabled := False;
+//
+//end;
+
+//procedure TyusouForm.FormClose(Sender: TObject; var Action: TCloseAction);
+//  var taxi_mainForm: Ttaxi_mainForm;
+//begin
+//  Ttaxi_mainForm.Enabled := True;
+//end;
+
+procedure TyusouForm.joumu_kintaiButtonClick(Sender: TObject);
+  var
+  yusou_joumu_kintaiForm: Tyusou_joumu_kintaiForm;
+    begin
+          yusou_joumu_kintaiForm := Tyusou_joumu_kintaiForm.Create(Application); // Form1 객체를 생성합니다.
+  yusou_joumu_kintaiForm.ShowModal; // Form1를 보여줍니다
+end;
+
+procedure TyusouForm.joumu_tukiButtonClick(Sender: TObject);
+
+    var
+  yusou_joumu_tukiForm: Tyusou_joumu_tukiForm;
+begin
+          yusou_joumu_tukiForm := Tyusou_joumu_tukiForm.Create(Application); // Form1 객체를 생성합니다.
+  yusou_joumu_tukiForm.ShowModal; // Form1를 보여줍니다
+
+end;
+
+procedure TyusouForm.joumu_zissekiButtonClick(Sender: TObject);
+
+var
+  yusou_joumu_zissekiForm: Tyusou_joumu_zissekiForm;
+    begin
+  yusou_joumu_zissekiForm := Tyusou_joumu_zissekiForm.Create(Application); // Form1 객체를 생성합니다.
+  yusou_joumu_zissekiForm.ShowModal; // Form1를 보여줍니다.
+end;
+
+procedure TyusouForm.nippouButtonClick(Sender: TObject);
+  var
+  yusou_nippouForm: Tyusou_nippouForm;
+  begin
+  yusou_nippouForm := Tyusou_nippouForm.Create(Application); // Form1 객체를 생성합니다.
+  yusou_nippouForm.ShowModal; // Form1를 보여줍니다.
+end;
+
+procedure TyusouForm.sharyou_zissekiButtonClick(Sender: TObject);
+  var
+  yusou_joumu_zissekiForm: Tyusou_joumu_zissekiForm;
+    begin
+  yusou_joumu_zissekiForm := Tyusou_joumu_zissekiForm.Create(Application); // Form1 객체를 생성합니다.
+  yusou_joumu_zissekiForm.ShowModal; // Form1를 보여줍니다.
+end;
+
+procedure TyusouForm.shukeiButtonClick(Sender: TObject);
+
+    var
+  yusou_shukeiForm: Tyusou_shukeiForm;
+  begin
+  yusou_shukeiForm := Tyusou_shukeiForm.Create(Application); // Form1 객체를 생성합니다.
+  yusou_shukeiForm.ShowModal; // Form1를 보여줍니다.
+end;
+
+
+procedure TyusouForm.taihiButtonClick(Sender: TObject);
+
+var
+  yusou_taihiForm: Tyusou_taihiForm;
+    begin
+  yusou_taihiForm := Tyusou_taihiForm.Create(Application); // Form1 객체를 생성합니다.
+  yusou_taihiForm.ShowModal; // Form1를 보여줍니다.
+end;
+
+procedure TyusouForm.zissekiButtonClick(Sender: TObject);
+
+var
+  yusou_houkokuForm: Tyusou_houkokuForm;
+      begin
+  yusou_houkokuForm := Tyusou_houkokuForm.Create(Application); // Form1 객체를 생성합니다.
+  yusou_houkokuForm.ShowModal; // Form1를 보여줍니다.
+end;
+
+end.

@@ -1,0 +1,51 @@
+unit test;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs;
+
+type
+  TForm4 = class(TForm)
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form4: TForm4;
+  DBText1: TDBText;
+
+implementation
+
+{$R *.dfm}
+procedure TForm2.FormCreate(Sender: TObject);
+
+begin
+  try
+    // Connect to the SQLite database
+    FDConnection1.Params.DriverID := 'SQLite';
+    FDConnection1.Params.Database := 'C:\path\to\database.db';
+    FDConnection1.Connected := True;
+
+    // Set up the TFDQuery to retrieve data from the database
+    FDQuery1.SQL.Text := 'SELECT * FROM mytable';
+    FDQuery1.Open;
+
+    // Set up the TDataSource to manage the TFDQuery
+    DataSource1.DataSet := FDQuery1;
+
+    // Set up the TDBText to display the data
+    DBText1 := TDBText.Create(Self);
+    DBText1.Parent := Self;
+    DBText1.DataSource := DataSource1;
+    DBText1.DataField := 'name';
+    DBText1.Left := 10;
+    DBText1.Top := 10;
+  except
+    on E: Exception do
+      ShowMessage('Error: ' + E.Message);
+  end;
+end.

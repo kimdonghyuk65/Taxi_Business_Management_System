@@ -1,0 +1,69 @@
+unit shoki;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ComCtrls, Vcl.StdCtrls, Vcl.ExtCtrls, office, section,
+  customer;
+
+type
+  TshokiForm = class(TForm)
+    Panel1: TPanel;
+    sectionButton: TButton;
+    employeeButton: TButton;
+    radioButton: TButton;
+    officeButton: TButton;
+    customerButton: TButton;
+    fareButton: TButton;
+    placeButton: TButton;
+    basicButton: TButton;
+    patternButton: TButton;
+    weatherButton: TButton;
+    companyButton: TButton;
+    backButton: TButton;
+    paymentButton: TButton;
+    StatusBar: TStatusBar;
+    procedure officeButtonClick(Sender: TObject);
+    procedure sectionButtonClick(Sender: TObject);
+    procedure customerButtonClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  shokiForm: TshokiForm;
+
+implementation
+
+{$R *.dfm}
+
+procedure TshokiForm.customerButtonClick(Sender: TObject);
+
+var
+  customerForm: TcustomerForm;
+  begin
+  customerForm := TcustomerForm.Create(Application); // Form1 객체를 생성합니다.
+  customerForm.ShowModal; // Form1를 보여줍니다.
+end;
+
+procedure TshokiForm.officeButtonClick(Sender: TObject);
+
+var
+  officeForm: TofficeForm;
+begin
+  officeForm := TofficeForm.Create(Application); // Form1 객체를 생성합니다.
+  officeForm.ShowModal; // Form1를 보여줍니다.
+end;
+
+procedure TshokiForm.sectionButtonClick(Sender: TObject);
+  var
+  sectionForm: TsectionForm;
+  begin
+  sectionForm := TsectionForm.Create(Application); // Form1 객체를 생성합니다.
+  sectionForm.ShowModal; // Form1를 보여줍니다.
+end;
+
+end.

@@ -1,0 +1,792 @@
+object Form2: TForm2
+  Left = 0
+  Top = 0
+  Caption = 'Form2'
+  ClientHeight = 614
+  ClientWidth = 644
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Panel1: TPanel
+    Left = 0
+    Top = 32
+    Width = 644
+    Height = 561
+    Align = alClient
+    TabOrder = 0
+    ExplicitLeft = -99
+    ExplicitTop = -289
+    ExplicitWidth = 604
+    ExplicitHeight = 520
+    object searchGroupBox: TGroupBox
+      Left = 14
+      Top = 7
+      Width = 564
+      Height = 73
+      Caption = #26908#32034#26465#20214
+      Color = clScrollBar
+      Font.Charset = SHIFTJIS_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+      Font.Style = []
+      ParentColor = False
+      ParentFont = False
+      TabOrder = 0
+      Visible = False
+      object Label1: TLabel
+        Left = 8
+        Top = 46
+        Width = 55
+        Height = 15
+        Caption = #30330#29983#26085#65297
+        Font.Charset = SHIFTJIS_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -15
+        Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+        Font.Style = []
+        ParentFont = False
+      end
+      object Label2: TLabel
+        Left = 166
+        Top = 47
+        Width = 75
+        Height = 15
+        Caption = #65374' '#30330#29983#26085#65298
+        Font.Charset = SHIFTJIS_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -15
+        Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+        Font.Style = []
+        ParentFont = False
+      end
+      object Label5: TLabel
+        Left = 31
+        Top = 19
+        Width = 30
+        Height = 15
+        Caption = #39015#23458
+        Font.Charset = SHIFTJIS_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -15
+        Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+        Font.Style = []
+        ParentFont = False
+      end
+      object searchButton: TButton
+        Left = 500
+        Top = 48
+        Width = 56
+        Height = 22
+        Caption = #27770#12288#23450
+        TabOrder = 5
+      end
+      object business1MaskEdit: TMaskEdit
+        Left = 66
+        Top = 43
+        Width = 92
+        Height = 23
+        EditMask = '!9999/99/00;1;_'
+        ImeMode = imDisable
+        MaxLength = 10
+        TabOrder = 3
+        Text = '0000/00/00'
+      end
+      object business2MaskEdit: TMaskEdit
+        Left = 245
+        Top = 43
+        Width = 92
+        Height = 23
+        EditMask = '!9999/99/00;1;_'
+        ImeMode = imDisable
+        MaxLength = 10
+        TabOrder = 4
+        Text = '0000/00/00'
+      end
+      object s_codeEdit: TEdit
+        Tag = 3
+        Left = 66
+        Top = 14
+        Width = 49
+        Height = 23
+        Hint = #65318#65297#65298#12434#25276#19979#12377#12427#12392#39015#23458#12467#12540#12489#12398#21442#29031#12364#20986#26469#12414#12377
+        Font.Charset = SHIFTJIS_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -15
+        Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+        Font.Style = []
+        ImeMode = imDisable
+        ParentFont = False
+        ParentShowHint = False
+        ShowHint = True
+        TabOrder = 0
+      end
+      object s_huriganaEdit: TEdit
+        Tag = 3
+        Left = 112
+        Top = 14
+        Width = 89
+        Height = 23
+        Hint = #65318#65297#65298#12434#25276#19979#12377#12427#12392#39015#23458#12467#12540#12489#12398#21442#29031#12364#20986#26469#12414#12377
+        Font.Charset = SHIFTJIS_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -15
+        Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+        Font.Style = []
+        ImeMode = imSKata
+        ParentFont = False
+        ParentShowHint = False
+        ShowHint = True
+        TabOrder = 1
+      end
+      object s_customerButton: TButton
+        Left = 203
+        Top = 15
+        Width = 22
+        Height = 22
+        Caption = #8230
+        Font.Charset = SHIFTJIS_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -15
+        Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+        Font.Style = []
+        ParentFont = False
+        TabOrder = 2
+      end
+      object s_nameStaticText: TStaticText
+        Left = 224
+        Top = 15
+        Width = 274
+        Height = 23
+        AutoSize = False
+        BevelKind = bkFlat
+        Color = clInfoBk
+        Font.Charset = SHIFTJIS_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -15
+        Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+        Font.Style = []
+        ParentColor = False
+        ParentFont = False
+        TabOrder = 6
+      end
+    end
+    object postButton: TButton
+      Left = 483
+      Top = 177
+      Width = 75
+      Height = 25
+      Caption = #30331#12288#37682
+      Font.Charset = SHIFTJIS_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 2
+    end
+    object cancelButton: TButton
+      Left = 397
+      Top = 177
+      Width = 75
+      Height = 25
+      Caption = #12461#12515#12531#12475#12523
+      Font.Charset = SHIFTJIS_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 3
+    end
+    object DBGrid: TDBGrid
+      Left = 17
+      Top = 206
+      Width = 577
+      Height = 231
+      TabStop = False
+      DataSource = gridDataSource
+      Font.Charset = SHIFTJIS_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+      Font.Style = []
+      Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit]
+      ParentFont = False
+      TabOrder = 4
+      TitleFont.Charset = SHIFTJIS_CHARSET
+      TitleFont.Color = clWindowText
+      TitleFont.Height = -12
+      TitleFont.Name = #65325#65331' '#65328#12468#12471#12483#12463
+      TitleFont.Style = []
+      Columns = <
+        item
+          Expanded = False
+          FieldName = 'business_day'
+          Title.Alignment = taCenter
+          Title.Font.Charset = SHIFTJIS_CHARSET
+          Title.Font.Color = clWindowText
+          Title.Font.Height = -15
+          Title.Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+          Title.Font.Style = []
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'customer_hurigana'
+          Title.Alignment = taCenter
+          Title.Caption = #39015#23458
+          Title.Font.Charset = SHIFTJIS_CHARSET
+          Title.Font.Color = clWindowText
+          Title.Font.Height = -15
+          Title.Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+          Title.Font.Style = []
+          Width = 150
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'payment_class_name'
+          Title.Alignment = taCenter
+          Title.Font.Charset = SHIFTJIS_CHARSET
+          Title.Font.Color = clWindowText
+          Title.Font.Height = -15
+          Title.Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+          Title.Font.Style = []
+          Width = 100
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'amount'
+          Title.Alignment = taCenter
+          Title.Caption = #37329#38989
+          Title.Font.Charset = SHIFTJIS_CHARSET
+          Title.Font.Color = clWindowText
+          Title.Font.Height = -15
+          Title.Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+          Title.Font.Style = []
+          Width = 95
+          Visible = True
+        end>
+    end
+    object DBNavigator: TDBNavigator
+      Left = 370
+      Top = 439
+      Width = 224
+      Height = 25
+      DataSource = gridDataSource
+      VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast]
+      TabOrder = 5
+    end
+    object totalPanel: TPanel
+      Left = 159
+      Top = 476
+      Width = 294
+      Height = 42
+      BevelInner = bvLowered
+      TabOrder = 6
+      object Label27: TLabel
+        Left = 0
+        Top = 3
+        Width = 50
+        Height = 38
+        Alignment = taCenter
+        AutoSize = False
+        Caption = #21512#12288#35336
+        Color = clTeal
+        Font.Charset = SHIFTJIS_CHARSET
+        Font.Color = clWindow
+        Font.Height = -15
+        Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+        Font.Style = []
+        ParentColor = False
+        ParentFont = False
+        Layout = tlCenter
+      end
+      object Label4: TLabel
+        Left = 51
+        Top = 3
+        Width = 80
+        Height = 17
+        Alignment = taCenter
+        AutoSize = False
+        Caption = #26410#12288#21454
+        Color = clTeal
+        Font.Charset = SHIFTJIS_CHARSET
+        Font.Color = clWindow
+        Font.Height = -15
+        Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+        Font.Style = []
+        ParentColor = False
+        ParentFont = False
+        Layout = tlCenter
+      end
+      object Label7: TLabel
+        Left = 132
+        Top = 3
+        Width = 80
+        Height = 17
+        Alignment = taCenter
+        AutoSize = False
+        Caption = #20837#12288#37329
+        Color = clTeal
+        Font.Charset = SHIFTJIS_CHARSET
+        Font.Color = clWindow
+        Font.Height = -15
+        Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+        Font.Style = []
+        ParentColor = False
+        ParentFont = False
+        Layout = tlCenter
+      end
+      object Label12: TLabel
+        Left = 213
+        Top = 3
+        Width = 80
+        Height = 17
+        Alignment = taCenter
+        AutoSize = False
+        Caption = #22770#25499#27531#39640
+        Color = clTeal
+        Font.Charset = SHIFTJIS_CHARSET
+        Font.Color = clWindow
+        Font.Height = -15
+        Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+        Font.Style = []
+        ParentColor = False
+        ParentFont = False
+        Layout = tlCenter
+      end
+      object DBTexttotal_accrued: TDBText
+        Left = 51
+        Top = 21
+        Width = 80
+        Height = 19
+        Color = clInfoBk
+        DataField = 'total_accrued'
+        DataSource = totalDataSource
+        Font.Charset = SHIFTJIS_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -15
+        Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+        Font.Style = []
+        ParentColor = False
+        ParentFont = False
+      end
+      object DBTextt_amount: TDBText
+        Left = 133
+        Top = 21
+        Width = 80
+        Height = 19
+        Color = clInfoBk
+        DataField = 't_amount'
+        DataSource = totalDataSource
+        Font.Charset = SHIFTJIS_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -15
+        Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+        Font.Style = []
+        ParentColor = False
+        ParentFont = False
+      end
+      object DBTextsale: TDBText
+        Left = 214
+        Top = 21
+        Width = 80
+        Height = 19
+        Color = clInfoBk
+        DataField = 'sale'
+        DataSource = totalDataSource
+        Font.Charset = SHIFTJIS_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -15
+        Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+        Font.Style = []
+        ParentColor = False
+        ParentFont = False
+      end
+    end
+    object paymentGroupBox: TGroupBox
+      Left = 51
+      Top = 82
+      Width = 509
+      Height = 88
+      Font.Charset = SHIFTJIS_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 1
+      TabStop = True
+      object Label9: TLabel
+        Left = 2
+        Top = 7
+        Width = 95
+        Height = 17
+        Alignment = taCenter
+        AutoSize = False
+        Caption = #30330#29983#26085
+        Color = clTeal
+        Font.Charset = SHIFTJIS_CHARSET
+        Font.Color = clWhite
+        Font.Height = -15
+        Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+        Font.Style = []
+        ParentColor = False
+        ParentFont = False
+        Layout = tlCenter
+      end
+      object Label19: TLabel
+        Left = 422
+        Top = 7
+        Width = 84
+        Height = 17
+        Alignment = taCenter
+        AutoSize = False
+        Caption = #37329#38989
+        Color = clTeal
+        Font.Charset = SHIFTJIS_CHARSET
+        Font.Color = clWhite
+        Font.Height = -15
+        Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+        Font.Style = []
+        ParentColor = False
+        ParentFont = False
+        Layout = tlCenter
+      end
+      object Label20: TLabel
+        Left = 98
+        Top = 7
+        Width = 104
+        Height = 17
+        Alignment = taCenter
+        AutoSize = False
+        Caption = #39015#23458#12467#12540#12489
+        Color = clTeal
+        Font.Charset = SHIFTJIS_CHARSET
+        Font.Color = clWhite
+        Font.Height = -15
+        Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+        Font.Style = []
+        ParentColor = False
+        ParentFont = False
+        Layout = tlCenter
+      end
+      object Label21: TLabel
+        Left = 203
+        Top = 7
+        Width = 101
+        Height = 17
+        Alignment = taCenter
+        AutoSize = False
+        Caption = #12501#12522#12460#12490
+        Color = clTeal
+        Font.Charset = SHIFTJIS_CHARSET
+        Font.Color = clWhite
+        Font.Height = -15
+        Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+        Font.Style = []
+        ParentColor = False
+        ParentFont = False
+        Layout = tlCenter
+      end
+      object Label23: TLabel
+        Left = 98
+        Top = 25
+        Width = 227
+        Height = 17
+        Alignment = taCenter
+        AutoSize = False
+        Caption = #39015#23458#21517
+        Color = clTeal
+        Font.Charset = SHIFTJIS_CHARSET
+        Font.Color = clWhite
+        Font.Height = -15
+        Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+        Font.Style = []
+        ParentColor = False
+        ParentFont = False
+        Layout = tlCenter
+      end
+      object Label26: TLabel
+        Left = 326
+        Top = 25
+        Width = 180
+        Height = 17
+        Alignment = taCenter
+        AutoSize = False
+        Caption = #20633#32771
+        Color = clTeal
+        Font.Charset = SHIFTJIS_CHARSET
+        Font.Color = clWhite
+        Font.Height = -15
+        Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+        Font.Style = []
+        ParentColor = False
+        ParentFont = False
+        Layout = tlCenter
+      end
+      object Label3: TLabel
+        Left = 326
+        Top = 7
+        Width = 95
+        Height = 17
+        Alignment = taCenter
+        AutoSize = False
+        Caption = #20837#37329#21306#20998
+        Color = clTeal
+        Font.Charset = SHIFTJIS_CHARSET
+        Font.Color = clWhite
+        Font.Height = -15
+        Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+        Font.Style = []
+        ParentColor = False
+        ParentFont = False
+        Layout = tlCenter
+      end
+      object Label6: TLabel
+        Left = 2
+        Top = 25
+        Width = 95
+        Height = 17
+        Alignment = taCenter
+        AutoSize = False
+        Color = clTeal
+        Font.Charset = SHIFTJIS_CHARSET
+        Font.Color = clWhite
+        Font.Height = -15
+        Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+        Font.Style = []
+        ParentColor = False
+        ParentFont = False
+        Layout = tlCenter
+      end
+      object Label8: TLabel
+        Left = 305
+        Top = 7
+        Width = 20
+        Height = 17
+        Alignment = taCenter
+        AutoSize = False
+        Color = clTeal
+        Font.Charset = SHIFTJIS_CHARSET
+        Font.Color = clWhite
+        Font.Height = -15
+        Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+        Font.Style = []
+        ParentColor = False
+        ParentFont = False
+        Layout = tlCenter
+      end
+      object businessDBEdit: TDBEdit
+        Left = 2
+        Top = 41
+        Width = 96
+        Height = 23
+        DataField = 'business_day'
+        DataSource = nyukinDataSource
+        Font.Charset = SHIFTJIS_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -15
+        Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+        Font.Style = []
+        ImeMode = imDisable
+        ParentFont = False
+        TabOrder = 0
+      end
+      object customerDBEdit: TDBEdit
+        Tag = 3
+        Left = 98
+        Top = 41
+        Width = 104
+        Height = 23
+        Hint = #65318#65297#65298#12434#25276#19979#12377#12427#12392#39015#23458#12467#12540#12489#12398#21442#29031#12364#20986#26469#12414#12377
+        DataField = 'customer_code'
+        DataSource = nyukinDataSource
+        Font.Charset = SHIFTJIS_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -15
+        Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+        Font.Style = []
+        ImeMode = imDisable
+        ParentFont = False
+        ParentShowHint = False
+        ShowHint = True
+        TabOrder = 1
+      end
+      object huriganaDBEdit: TDBEdit
+        Tag = 3
+        Left = 201
+        Top = 41
+        Width = 104
+        Height = 23
+        Hint = #65318#65297#65298#12434#25276#19979#12377#12427#12392#39015#23458#12467#12540#12489#12398#21442#29031#12364#20986#26469#12414#12377
+        DataField = 'customer_hurigana'
+        DataSource = nyukinDataSource
+        Font.Charset = SHIFTJIS_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -15
+        Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+        Font.Style = []
+        ImeMode = imSKata
+        ParentFont = False
+        ParentShowHint = False
+        ShowHint = True
+        TabOrder = 2
+      end
+      object amountDBEdit: TDBEdit
+        Left = 419
+        Top = 41
+        Width = 88
+        Height = 23
+        Color = clWhite
+        DataField = 'amount'
+        DataSource = nyukinDataSource
+        Font.Charset = SHIFTJIS_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -15
+        Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+        Font.Style = []
+        ImeMode = imDisable
+        ParentFont = False
+        TabOrder = 5
+      end
+      object paymentDBLookupComboBox: TDBLookupComboBox
+        Left = 326
+        Top = 41
+        Width = 95
+        Height = 23
+        DataField = 'payment_class'
+        DataSource = nyukinDataSource
+        Font.Charset = SHIFTJIS_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -15
+        Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+        Font.Style = []
+        KeyField = 'payment_class'
+        ListField = 'payment_class_name'
+        ListSource = paymentDataSource
+        ParentFont = False
+        TabOrder = 4
+      end
+      object customerStaticText: TStaticText
+        Left = 98
+        Top = 64
+        Width = 229
+        Height = 22
+        AutoSize = False
+        BevelKind = bkFlat
+        Color = clInfoBk
+        Font.Charset = SHIFTJIS_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -15
+        Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+        Font.Style = []
+        ParentColor = False
+        ParentFont = False
+        TabOrder = 7
+      end
+      object customerButton: TButton
+        Left = 306
+        Top = 43
+        Width = 20
+        Height = 20
+        Caption = #8230
+        TabOrder = 3
+        TabStop = False
+      end
+      object noteDBEdit: TDBEdit
+        Left = 326
+        Top = 64
+        Width = 180
+        Height = 23
+        DataField = 'note'
+        DataSource = nyukinDataSource
+        TabOrder = 6
+      end
+    end
+  end
+  object StatusBar: TStatusBar
+    Left = 0
+    Top = 593
+    Width = 644
+    Height = 21
+    AutoHint = True
+    Panels = <>
+    SimplePanel = True
+    ExplicitLeft = -99
+    ExplicitTop = 210
+    ExplicitWidth = 604
+  end
+  object ButtonPanel: TPanel
+    Left = 0
+    Top = 0
+    Width = 644
+    Height = 32
+    Align = alTop
+    Font.Charset = SHIFTJIS_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -15
+    Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 2
+    TabStop = True
+    ExplicitLeft = -99
+    ExplicitWidth = 604
+    object newButton: TButton
+      Left = 8
+      Top = 5
+      Width = 75
+      Height = 22
+      Caption = #26032#12288#35215
+      TabOrder = 0
+    end
+    object editButton: TButton
+      Left = 91
+      Top = 5
+      Width = 75
+      Height = 22
+      Caption = #20462#12288#27491
+      TabOrder = 1
+    end
+    object CloseButton: TButton
+      Left = 521
+      Top = 5
+      Width = 75
+      Height = 22
+      Caption = #38281#12376#12427
+      TabOrder = 2
+    end
+    object deleteButton: TButton
+      Left = 176
+      Top = 5
+      Width = 75
+      Height = 22
+      Caption = #21066#12288#38500
+      TabOrder = 3
+    end
+  end
+  object nyukinDataSource: TDataSource
+    Left = 306
+  end
+  object paymentDataSource: TDataSource
+    Left = 432
+  end
+  object gridDataSource: TDataSource
+    Left = 477
+    Top = 203
+  end
+  object totalDataSource: TDataSource
+    Left = 96
+    Top = 203
+  end
+end

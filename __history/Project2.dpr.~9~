@@ -1,0 +1,36 @@
+program Project2;
+
+uses
+  Vcl.Forms,
+  shoki in 'shoki.pas' {shokiForm},
+  taxi_main in 'taxi_main.pas' {taxi_mainForm},
+  urikake in 'urikake.pas' {urikakeForm},
+  yusou in 'yusou.pas' {yusouForm},
+  salary_period in 'salary_period.pas' {salary_periodForm},
+  yusou_nippou in 'yusou_nippou.pas' {yusou_nippouForm},
+  yusou_shukei in 'yusou_shukei.pas' {yusou_shukeiForm},
+  yusou_taihi in 'yusou_taihi.pas' {yusou_taihiForm},
+  yusou_joumu_zisseki in 'yusou_joumu_zisseki.pas' {yusou_joumu_zissekiForm},
+  yusou_sharyou_zisseki in 'yusou_sharyou_zisseki.pas' {Form1},
+  yusou_houkoku in 'yusou_houkoku.pas' {yusou_houkokuForm},
+  yusou_joumu_tuki in 'yusou_joumu_tuki.pas' {yusou_joumu_tukiForm};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(Ttaxi_mainForm, taxi_mainForm);
+  Application.CreateForm(TshokiForm, shokiForm);
+  Application.CreateForm(TurikakeForm, urikakeForm);
+  Application.CreateForm(TyusouForm, yusouForm);
+  Application.CreateForm(Tsalary_periodForm, salary_periodForm);
+  Application.CreateForm(Tyusou_nippouForm, yusou_nippouForm);
+  Application.CreateForm(Tyusou_shukeiForm, yusou_shukeiForm);
+  Application.CreateForm(Tyusou_taihiForm, yusou_taihiForm);
+  Application.CreateForm(Tyusou_joumu_zissekiForm, yusou_joumu_zissekiForm);
+  Application.CreateForm(TForm1, Form1);
+  Application.CreateForm(Tyusou_houkokuForm, yusou_houkokuForm);
+  Application.CreateForm(Tyusou_joumu_tukiForm, yusou_joumu_tukiForm);
+  Application.Run;
+end.

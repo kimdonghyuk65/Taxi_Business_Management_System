@@ -1,0 +1,253 @@
+object urikakeForm: TurikakeForm
+  Left = 0
+  Top = 0
+  Caption = 'urikakeForm'
+  ClientHeight = 471
+  ClientWidth = 689
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  Menu = MainMenu
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 689
+    Height = 450
+    Align = alClient
+    BevelOuter = bvLowered
+    TabOrder = 0
+    object Bevel1: TBevel
+      Left = 104
+      Top = 56
+      Width = 481
+      Height = 73
+    end
+    object Bevel2: TBevel
+      Left = 104
+      Top = 144
+      Width = 481
+      Height = 169
+    end
+    object Label2: TLabel
+      Left = 112
+      Top = 144
+      Width = 98
+      Height = 15
+      Alignment = taCenter
+      Caption = #24115#31080#12539#21360#21047#20966#29702
+      Color = clBtnFace
+      Font.Charset = SHIFTJIS_CHARSET
+      Font.Color = clBlack
+      Font.Height = -15
+      Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+      Font.Style = []
+      ParentColor = False
+      ParentFont = False
+      Layout = tlCenter
+    end
+    object Label1: TLabel
+      Left = 112
+      Top = 48
+      Width = 60
+      Height = 15
+      Alignment = taCenter
+      Caption = #20837#21147#20966#29702
+      Color = clBtnFace
+      Font.Charset = SHIFTJIS_CHARSET
+      Font.Color = clBlack
+      Font.Height = -15
+      Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+      Font.Style = []
+      ParentColor = False
+      ParentFont = False
+      Layout = tlCenter
+    end
+    object meisai_urikakeButton: TButton
+      Left = 112
+      Top = 170
+      Width = 217
+      Height = 41
+      BiDiMode = bdLeftToRight
+      Caption = #22770#25499#26126#32048#34920
+      Font.Charset = SHIFTJIS_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+      Font.Style = []
+      ParentBiDiMode = False
+      ParentFont = False
+      TabOrder = 2
+    end
+    object seikyuButton: TButton
+      Left = 112
+      Top = 219
+      Width = 217
+      Height = 41
+      BiDiMode = bdLeftToRight
+      Caption = #35531#27714#26360
+      Font.Charset = SHIFTJIS_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+      Font.Style = []
+      ParentBiDiMode = False
+      ParentFont = False
+      TabOrder = 3
+    end
+    object seikyu_listButton: TButton
+      Left = 360
+      Top = 218
+      Width = 217
+      Height = 41
+      BiDiMode = bdLeftToRight
+      Caption = #35531#27714#19968#35239#34920
+      Font.Charset = SHIFTJIS_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+      Font.Style = []
+      ParentBiDiMode = False
+      ParentFont = False
+      TabOrder = 6
+    end
+    object mishuButton: TButton
+      Left = 112
+      Top = 74
+      Width = 217
+      Height = 41
+      BiDiMode = bdLeftToRight
+      Caption = #26410#21454#37329#20837#21147
+      Font.Charset = SHIFTJIS_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+      Font.Style = []
+      ParentBiDiMode = False
+      ParentFont = False
+      TabOrder = 0
+    end
+    object meisai_nyukinButton: TButton
+      Left = 360
+      Top = 171
+      Width = 217
+      Height = 41
+      BiDiMode = bdLeftToRight
+      Caption = #20837#37329#26126#32048#34920
+      Font.Charset = SHIFTJIS_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+      Font.Style = []
+      ParentBiDiMode = False
+      ParentFont = False
+      TabOrder = 5
+    end
+    object joumu_kintaButton: TButton
+      Left = 112
+      Top = 267
+      Width = 217
+      Height = 41
+      BiDiMode = bdLeftToRight
+      Caption = #22770#25499#27531#39640#19968#35239#34920
+      Font.Charset = SHIFTJIS_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+      Font.Style = []
+      ParentBiDiMode = False
+      ParentFont = False
+      TabOrder = 4
+    end
+    object nyukinButton: TButton
+      Left = 360
+      Top = 74
+      Width = 217
+      Height = 41
+      BiDiMode = bdLeftToRight
+      Caption = #20837#37329#20837#21147
+      Font.Charset = SHIFTJIS_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+      Font.Style = []
+      ParentBiDiMode = False
+      ParentFont = False
+      TabOrder = 1
+    end
+    object Button1: TButton
+      Left = 592
+      Top = 376
+      Width = 75
+      Height = 25
+      Caption = #25147#12288#12427
+      Font.Charset = SHIFTJIS_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 7
+      OnClick = Button1Click
+    end
+  end
+  object StatusBar: TStatusBar
+    Left = 0
+    Top = 450
+    Width = 689
+    Height = 21
+    AutoHint = True
+    Panels = <>
+    SimplePanel = True
+  end
+  object MainMenu: TMainMenu
+    Top = 2
+    object File1: TMenuItem
+      Caption = #12501#12449#12452#12523#65288'&F'#65289
+      object csv_out: TMenuItem
+        Caption = 'csv'#20986#21147
+      end
+    end
+    object Y1: TMenuItem
+      Caption = #36664#36865#12539#21220#24608#31649#29702'(&Y)'
+      object yusou_nippou: TMenuItem
+        Caption = #20055#21209#26085#22577
+      end
+      object yusou_shukei: TMenuItem
+        Caption = #21942#26989#38598#35336
+      end
+      object yusou_joumu_zisseki: TMenuItem
+        Caption = #20055#21209#21729#21029#23455#32318#38598#35336#34920
+      end
+      object yusou_sharyou_zisseki: TMenuItem
+        Caption = #36554#20001#21029#23455#32318#38598#35336#34920
+      end
+      object yusou_taihi: TMenuItem
+        Caption = #21069#24180#21516#26376#23550#27604#23455#32318#34920
+      end
+      object yusou_joumu_kintai: TMenuItem
+        Caption = #20055#21209#21729#21029#21220#24608#23455#32318#34920
+      end
+      object yusou_kintai: TMenuItem
+        Caption = #20055#21209#21729#21029#21220#24608#26376#22577'/'#24180#22577
+      end
+      object kintai_shukei: TMenuItem
+        Caption = #21220#24608#38598#35336#34920
+      end
+    end
+    object N5: TMenuItem
+      Caption = #21021#26399#35373#23450'(&S)'
+      object shoki_kihon: TMenuItem
+        Caption = #22522#26412#38917#30446
+      end
+      object shoki_pattern: TMenuItem
+        Caption = #21220#21209#12497#12479#12540#12531
+      end
+    end
+  end
+end
