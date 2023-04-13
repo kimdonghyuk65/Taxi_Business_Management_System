@@ -127,10 +127,10 @@ end;
 
 procedure TshokiForm.radioButtonClick(Sender: TObject);
   var
-  sectionForm: TsectionForm;
+   radio_noForm: Tradio_noForm;
   begin
-  sectionForm := TsectionForm.Create(Application);
-  sectionForm.ShowModal;
+   radio_noForm := Tradio_noForm.Create(Application);
+   radio_noForm.ShowModal;
 end;
 
 procedure TshokiForm.sectionButtonClick(Sender: TObject);

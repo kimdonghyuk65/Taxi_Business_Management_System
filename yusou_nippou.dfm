@@ -12,6 +12,7 @@ object yusou_nippouForm: Tyusou_nippouForm
   Font.Style = []
   OldCreateOrder = False
   Position = poMainFormCenter
+  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   object Panel1: TPanel
@@ -59,7 +60,7 @@ object yusou_nippouForm: Tyusou_nippouForm
       end
       object s_radioEdit: TEdit
         Tag = 2
-        Left = 222
+        Left = 216
         Top = 22
         Width = 52
         Height = 23
@@ -71,7 +72,7 @@ object yusou_nippouForm: Tyusou_nippouForm
       end
       object s_employeeEdit: TEdit
         Tag = 1
-        Left = 400
+        Left = 394
         Top = 22
         Width = 49
         Height = 23
@@ -100,6 +101,7 @@ object yusou_nippouForm: Tyusou_nippouForm
         Caption = #8230
         TabOrder = 3
         TabStop = False
+        OnClick = s_employeeButtonClick
       end
       object searchButton: TButton
         Left = 648
@@ -110,7 +112,7 @@ object yusou_nippouForm: Tyusou_nippouForm
         TabOrder = 4
       end
       object s_businessMaskEdit: TMaskEdit
-        Left = 62
+        Left = 66
         Top = 22
         Width = 89
         Height = 23
@@ -119,6 +121,7 @@ object yusou_nippouForm: Tyusou_nippouForm
         MaxLength = 10
         TabOrder = 0
         Text = '0000/00/00'
+        OnEnter = business_dayDBEditEnter
       end
       object s_carStaticText: TStaticText
         Left = 274
@@ -134,11 +137,10 @@ object yusou_nippouForm: Tyusou_nippouForm
     end
     object GroupBox: TGroupBox
       Left = 2
-      Top = 119
+      Top = 113
       Width = 785
       Height = 268
       Caption = #36664#36865#26085#22577
-      Enabled = False
       TabOrder = 2
       TabStop = True
       object Label11: TLabel
@@ -691,8 +693,8 @@ object yusou_nippouForm: Tyusou_nippouForm
         ParentFont = False
       end
       object sinceDBText: TDBText
-        Left = 104
-        Top = 131
+        Left = 99
+        Top = 133
         Width = 95
         Height = 23
         Alignment = taRightJustify
@@ -708,14 +710,13 @@ object yusou_nippouForm: Tyusou_nippouForm
         ParentFont = False
       end
       object sum_totalDBText: TDBText
-        Left = 8
-        Top = 237
+        Left = 3
+        Top = 242
         Width = 95
         Height = 23
         Alignment = taRightJustify
         Color = clInfoBk
         DataField = 'sum_total'
-        DataSource = yusou_nippouDataSource
         Font.Charset = SHIFTJIS_CHARSET
         Font.Color = clBlack
         Font.Height = -15
@@ -726,7 +727,7 @@ object yusou_nippouForm: Tyusou_nippouForm
       end
       object taxDBText: TDBText
         Left = 296
-        Top = 131
+        Top = 133
         Width = 95
         Height = 23
         Alignment = taRightJustify
@@ -743,13 +744,12 @@ object yusou_nippouForm: Tyusou_nippouForm
       end
       object tax_outDBText: TDBText
         Left = 104
-        Top = 237
+        Top = 242
         Width = 95
         Height = 23
         Alignment = taRightJustify
         Color = clInfoBk
         DataField = 'tax_out'
-        DataSource = yusou_nippouDataSource
         Font.Charset = SHIFTJIS_CHARSET
         Font.Color = clBlack
         Font.Height = -15
@@ -760,13 +760,11 @@ object yusou_nippouForm: Tyusou_nippouForm
       end
       object real_rateDBText: TDBText
         Left = 8
-        Top = 184
+        Top = 185
         Width = 95
         Height = 23
         Alignment = taRightJustify
         Color = clInfoBk
-        DataField = 'real_rate'
-        DataSource = yusou_nippouDataSource
         Font.Charset = SHIFTJIS_CHARSET
         Font.Color = clBlack
         Font.Height = -15
@@ -776,13 +774,12 @@ object yusou_nippouForm: Tyusou_nippouForm
         ParentFont = False
       end
       object mileage_incomeDBText: TDBText
-        Left = 104
-        Top = 184
+        Left = 109
+        Top = 185
         Width = 95
         Height = 23
         Alignment = taRightJustify
         Color = clInfoBk
-        DataField = 'mileage_income'
         DataSource = yusou_nippouDataSource
         Font.Charset = SHIFTJIS_CHARSET
         Font.Color = clBlack
@@ -793,14 +790,12 @@ object yusou_nippouForm: Tyusou_nippouForm
         ParentFont = False
       end
       object real_incomeDBText: TDBText
-        Left = 200
+        Left = 195
         Top = 184
         Width = 95
         Height = 23
         Alignment = taRightJustify
         Color = clInfoBk
-        DataField = 'real_income'
-        DataSource = yusou_nippouDataSource
         Font.Charset = SHIFTJIS_CHARSET
         Font.Color = clBlack
         Font.Height = -15
@@ -810,14 +805,13 @@ object yusou_nippouForm: Tyusou_nippouForm
         ParentFont = False
       end
       object cash_totalDBText: TDBText
-        Left = 200
-        Top = 237
+        Left = 205
+        Top = 241
         Width = 95
         Height = 23
         Alignment = taRightJustify
         Color = clInfoBk
         DataField = 'cash_total'
-        DataSource = yusou_nippouDataSource
         Font.Charset = SHIFTJIS_CHARSET
         Font.Color = clBlack
         Font.Height = -15
@@ -827,14 +821,13 @@ object yusou_nippouForm: Tyusou_nippouForm
         ParentFont = False
       end
       object totalDBText: TDBText
-        Left = 296
-        Top = 237
+        Left = 301
+        Top = 242
         Width = 95
         Height = 23
         Alignment = taRightJustify
         Color = clInfoBk
         DataField = 'total'
-        DataSource = yusou_nippouDataSource
         Font.Charset = SHIFTJIS_CHARSET
         Font.Color = clBlack
         Font.Height = -15
@@ -863,8 +856,8 @@ object yusou_nippouForm: Tyusou_nippouForm
         Layout = tlCenter
       end
       object transferDBText: TDBText
-        Left = 200
-        Top = 131
+        Left = 195
+        Top = 133
         Width = 95
         Height = 23
         Alignment = taRightJustify
@@ -880,7 +873,7 @@ object yusou_nippouForm: Tyusou_nippouForm
         ParentFont = False
       end
       object handicap_discountDBEdit: TDBEdit
-        Left = 488
+        Left = 489
         Top = 183
         Width = 95
         Height = 23
@@ -891,7 +884,7 @@ object yusou_nippouForm: Tyusou_nippouForm
       end
       object handicap_countDBEdit: TDBEdit
         Left = 584
-        Top = 183
+        Top = 182
         Width = 95
         Height = 23
         DataField = 'handicap_count'
@@ -900,8 +893,8 @@ object yusou_nippouForm: Tyusou_nippouForm
         TabOrder = 13
       end
       object handicap_numberDBEdit: TDBEdit
-        Left = 680
-        Top = 183
+        Left = 669
+        Top = 182
         Width = 95
         Height = 23
         DataField = 'handicap_number'
@@ -921,8 +914,8 @@ object yusou_nippouForm: Tyusou_nippouForm
         TabOrder = 9
       end
       object charge_outsideDBEdit: TDBEdit
-        Left = 488
-        Top = 131
+        Left = 493
+        Top = 133
         Width = 95
         Height = 23
         AutoSize = False
@@ -932,8 +925,8 @@ object yusou_nippouForm: Tyusou_nippouForm
         TabOrder = 7
       end
       object accrued_totalDBEdit: TDBEdit
-        Left = 392
-        Top = 131
+        Left = 397
+        Top = 133
         Width = 73
         Height = 23
         AutoSize = False
@@ -967,8 +960,8 @@ object yusou_nippouForm: Tyusou_nippouForm
         TabOrder = 11
       end
       object excess_deficiencyDBEdit: TDBEdit
-        Left = 584
-        Top = 131
+        Left = 589
+        Top = 133
         Width = 95
         Height = 23
         AutoSize = False
@@ -978,13 +971,14 @@ object yusou_nippouForm: Tyusou_nippouForm
         TabOrder = 8
       end
       object accruedButton: TButton
-        Left = 466
-        Top = 131
+        Left = 464
+        Top = 134
         Width = 23
         Height = 22
         Caption = #8230
         TabOrder = 24
         TabStop = False
+        OnClick = accruedButtonClick
       end
       object t_total_mileageDBEdit: TDBEdit
         Left = 104
@@ -998,7 +992,7 @@ object yusou_nippouForm: Tyusou_nippouForm
         TabOrder = 0
       end
       object t_entrainment_mileageDBEdit: TDBEdit
-        Left = 200
+        Left = 198
         Top = 42
         Width = 95
         Height = 23
@@ -1032,8 +1026,8 @@ object yusou_nippouForm: Tyusou_nippouForm
         TabOrder = 2
       end
       object t_tax_countDBEdit: TDBEdit
-        Left = 488
-        Top = 42
+        Left = 490
+        Top = 43
         Width = 95
         Height = 23
         TabStop = False
@@ -1081,7 +1075,7 @@ object yusou_nippouForm: Tyusou_nippouForm
         TabOrder = 22
       end
       object y_entrainment_countDBEdit: TDBEdit
-        Left = 296
+        Left = 298
         Top = 64
         Width = 95
         Height = 23
@@ -1093,8 +1087,8 @@ object yusou_nippouForm: Tyusou_nippouForm
         TabOrder = 21
       end
       object y_tax_countDBEdit: TDBEdit
-        Left = 488
-        Top = 64
+        Left = 490
+        Top = 65
         Width = 95
         Height = 23
         TabStop = False
@@ -1133,10 +1127,10 @@ object yusou_nippouForm: Tyusou_nippouForm
         TabOrder = 16
       end
       object since_countDBEdit: TDBEdit
-        Left = 392
+        Left = 391
         Top = 85
         Width = 95
-        Height = 23
+        Height = 22
         TabStop = False
         AutoSize = False
         Color = clInfoBk
@@ -1161,10 +1155,10 @@ object yusou_nippouForm: Tyusou_nippouForm
         TabOrder = 17
       end
       object tax_countDBEdit: TDBEdit
-        Left = 488
-        Top = 85
+        Left = 490
+        Top = 86
         Width = 95
-        Height = 23
+        Height = 24
         AutoSize = False
         Color = clInfoBk
         DataField = 't_tax_count'
@@ -1276,11 +1270,12 @@ object yusou_nippouForm: Tyusou_nippouForm
         DataSource = yusou_nippouDataSource
         ImeMode = imDisable
         TabOrder = 0
+        OnEnter = business_dayDBEditEnter
       end
       object radio_noDBEdit: TDBEdit
         Tag = 2
-        Left = 229
-        Top = 12
+        Left = 234
+        Top = 15
         Width = 52
         Height = 23
         Hint = #65318#65297#65298#12434#25276#19979#12377#12427#12392#28961#32218#8470#12398#21442#29031#12364#20986#26469#12414#12377
@@ -1293,7 +1288,7 @@ object yusou_nippouForm: Tyusou_nippouForm
       end
       object employeeDBEdit: TDBEdit
         Tag = 1
-        Left = 408
+        Left = 403
         Top = 12
         Width = 47
         Height = 23
@@ -1313,6 +1308,7 @@ object yusou_nippouForm: Tyusou_nippouForm
         Caption = #8230
         TabOrder = 3
         TabStop = False
+        OnClick = s_employeeButtonClick
       end
       object employeeStaticText: TStaticText
         Left = 456
@@ -1326,8 +1322,8 @@ object yusou_nippouForm: Tyusou_nippouForm
         TabOrder = 4
       end
       object car_noStaticText: TStaticText
-        Left = 281
-        Top = 12
+        Left = 292
+        Top = 15
         Width = 52
         Height = 23
         AutoSize = False
@@ -1670,7 +1666,7 @@ object yusou_nippouForm: Tyusou_nippouForm
       end
       object Label56: TLabel
         Left = 8
-        Top = 20
+        Top = 15
         Width = 163
         Height = 15
         Alignment = taCenter
@@ -1725,8 +1721,8 @@ object yusou_nippouForm: Tyusou_nippouForm
         Layout = tlCenter
       end
       object attendanceDBEdit: TDBEdit
-        Left = 172
-        Top = 52
+        Left = 174
+        Top = 50
         Width = 73
         Height = 23
         Color = clWhite
@@ -1762,7 +1758,7 @@ object yusou_nippouForm: Tyusou_nippouForm
       end
       object midnight_overDBEdit: TDBEdit
         Left = 398
-        Top = 52
+        Top = 53
         Width = 75
         Height = 23
         Color = clWhite
@@ -1779,8 +1775,8 @@ object yusou_nippouForm: Tyusou_nippouForm
         TabOrder = 7
       end
       object workingDBEdit: TDBEdit
-        Left = 322
-        Top = 52
+        Left = 320
+        Top = 53
         Width = 75
         Height = 23
         Color = clWhite
@@ -1973,8 +1969,8 @@ object yusou_nippouForm: Tyusou_nippouForm
         TabOrder = 15
       end
       object patternDBLookupComboBox: TDBLookupComboBox
-        Left = 8
-        Top = 35
+        Left = 7
+        Top = 29
         Width = 164
         Height = 23
         BevelOuter = bvNone
@@ -2302,6 +2298,7 @@ object yusou_nippouForm: Tyusou_nippouForm
       Font.Style = []
       ParentColor = False
       ParentFont = False
+      Transparent = False
       Layout = tlCenter
     end
     object DBGridTotalgrid: TDBGrid
@@ -2391,34 +2388,35 @@ object yusou_nippouForm: Tyusou_nippouForm
     end
   end
   object yusou_nippouDataSource: TDataSource
-    Left = 288
-    Top = 2
+    Left = 604
+    Top = 210
   end
   object weatherDataSource: TDataSource
-    Left = 366
-    Top = 2
+    Left = 782
+    Top = 218
   end
   object yesDataSource: TDataSource
-    Left = 328
-    Top = 2
+    Left = 704
+    Top = 210
   end
   object gridDataSource: TDataSource
-    Left = 400
-    Top = 2
+    Left = 888
+    Top = 210
   end
   object DataSourceTotalgrid: TDataSource
-    Left = 472
-    Top = 2
+    Left = 608
+    Top = 154
   end
   object DataSourceTotal: TDataSource
-    Left = 477
-    Top = 2
+    Left = 877
+    Top = 154
   end
   object KintaiDataSource: TDataSource
-    Left = 477
+    Left = 701
+    Top = 152
   end
   object PatternDataSource: TDataSource
-    Left = 477
-    Top = 8
+    Left = 781
+    Top = 152
   end
 end

@@ -1,51 +1,88 @@
 object DBConnModule: TDBConnModule
   OldCreateOrder = False
-  Height = 278
-  Width = 418
+  Height = 340
+  Width = 455
   object FDConnection1: TFDConnection
     Params.Strings = (
       
         'Database=C:\Users\LG gram\Documents\Embarcadero\Studio\Taxi\Win3' +
         '2\Release\Taxi.db'
+      'StringFormat=Unicode'
       'DriverID=SQLite')
     Connected = True
-    Left = 268
-    Top = 112
+    Left = 76
+    Top = 16
   end
-  object FDQuery1: TFDQuery
+  object placeQuery: TFDQuery
     Connection = FDConnection1
     SQL.Strings = (
       'select *'
       'from PlACE')
-    Left = 56
-    Top = 112
-    object FDQuery1place_code: TSmallintField
-      FieldName = 'place_code'
-      Origin = 'place_code'
-      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
-    end
-    object FDQuery1place_name: TStringField
-      FieldName = 'place_name'
-      Origin = 'place_name'
-      Size = 30
-    end
-    object FDQuery1place_kana: TStringField
-      FieldName = 'place_kana'
-      Origin = 'place_kana'
-      Size = 4
-    end
+    Left = 16
+    Top = 224
   end
-  object DataSource1: TDataSource
-    DataSet = FDQuery1
-    Left = 200
-    Top = 112
-  end
-  object FDQuery2: TFDQuery
+  object officeQuery: TFDQuery
     Connection = FDConnection1
     SQL.Strings = (
       'select *'
       'from OFFICE')
-    Left = 136
-    Top = 112
+    Left = 88
+    Top = 224
+  end
+  object employeeQuery: TFDQuery
+    Connection = FDConnection1
+    SQL.Strings = (
+      'select *'
+      'from EMPLOYEE')
+    Left = 160
+    Top = 224
+  end
+  object customerQuery: TFDQuery
+    Connection = FDConnection1
+    SQL.Strings = (
+      'select *'
+      'from CUSTOMER')
+    Left = 224
+    Top = 224
+  end
+  object radioQuery: TFDQuery
+    Connection = FDConnection1
+    SQL.Strings = (
+      'select *'
+      'from RADIO')
+    Left = 296
+    Top = 224
+  end
+  object fareQuery: TFDQuery
+    Connection = FDConnection1
+    SQL.Strings = (
+      'select *'
+      'from FARE')
+    Left = 360
+    Top = 224
+  end
+  object cartypeQuery: TFDQuery
+    Connection = FDConnection1
+    SQL.Strings = (
+      'select *'
+      'from car_type')
+    Left = 360
+    Top = 160
+  end
+  object yusouQuery: TFDQuery
+    Connection = FDConnection1
+    SQL.Strings = (
+      'select *'
+      'from car_type')
+    Left = 296
+    Top = 160
+  end
+  object kintaiQuery: TFDQuery
+    Connection = FDConnection1
+    SQL.Strings = (
+      'select *'
+      'from KINTAI')
+    Left = 224
+    Top = 160
   end
 end

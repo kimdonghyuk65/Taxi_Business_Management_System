@@ -13,20 +13,23 @@ uses
 type
   TDBConnModule = class(TDataModule)
     FDConnection1: TFDConnection;
-    FDQuery1: TFDQuery;
-    DataSource1: TDataSource;
-    FDQuery2: TFDQuery;
-    FDQuery1place_code: TSmallintField;
-    FDQuery1place_name: TStringField;
-    FDQuery1place_kana: TStringField;
+    placeQuery: TFDQuery;
+    officeQuery: TFDQuery;
+    employeeQuery: TFDQuery;
+    customerQuery: TFDQuery;
+    radioQuery: TFDQuery;
+    fareQuery: TFDQuery;
+    cartypeQuery: TFDQuery;
+    yusouQuery: TFDQuery;
+    kintaiQuery: TFDQuery;
   private
     { Private declarations }
   public
     { Public declarations }
     procedure ConnectDB;
     procedure DisconnectDB;
-    procedure ExecuteQuery1(SQLText: string);
-    procedure ExecuteQuery2(SQLText: string);
+    procedure ExecuteQuery(Query: TFDQuery; SQLText: string);
+    function GetMaxOfficeCode: Integer;
   end;
 
 var
@@ -51,16 +54,11 @@ begin
 end;
 
 
-procedure TDBConnModule.ExecuteQuery1(SQLText: string);
-begin
-  FDQuery1.SQL.Text := SQLText;
-  FDQuery1.Open;
-end;
 
-procedure TDBConnModule.ExecuteQuery2(SQLText: string);
+procedure TDBConnModule.ExecuteQuery(Query: TFDQuery; SQLText: string);
 begin
-  FDQuery2.SQL.Text := SQLText;
-  FDQuery2.Open;
+  Query.SQL.Text := SQLText;
+  Query.Open;
 end;
 
  procedure TDBConnModule.DisconnectDB;
@@ -70,5 +68,18 @@ begin
     FDConnection1.Connected := False;
   end;
 end;
-
+ function TDBConnModule.GetMaxOfficeCode: Integer;
+var
+  query: TFDQuery;
+begin
+  query := TFDQuery.Create(nil);
+  try
+    query.Connection := FDConnection1;
+    query.SQL.Text := 'SELECT MAX(office_code) as max_office_code FROM OFFICE';
+    query.Open;
+    Result := query.FieldByName('max_office_code').AsInteger;
+  finally
+    query.Free;
+  end;
+end;
 end.

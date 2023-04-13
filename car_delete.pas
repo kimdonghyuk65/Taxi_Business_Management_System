@@ -7,7 +7,7 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Mask, Vcl.DBCtrls;
 
 type
-  Tcar_deleteForm = class(TForm)
+  T車両削除 = class(TForm)
     Label5: TLabel;
     end_carDBEdit: TDBEdit;
     cancelButton: TButton;
@@ -19,7 +19,7 @@ type
   end;
 
 var
-  car_deleteForm: Tcar_deleteForm;
+  車両削除: T車両削除;
 
 implementation
 

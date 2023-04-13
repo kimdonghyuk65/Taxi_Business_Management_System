@@ -9,7 +9,7 @@ object shokiForm: TshokiForm
   Font.Color = clWindowText
   Font.Height = -11
   Font.Name = 'Tahoma'
-  Font.Style = []
+  Font.Style = [fsBold]
   OldCreateOrder = False
   Position = poMainFormCenter
   PixelsPerInch = 96
@@ -22,7 +22,6 @@ object shokiForm: TshokiForm
     Align = alClient
     BevelOuter = bvLowered
     TabOrder = 0
-    ExplicitTop = -6
     object sectionButton: TButton
       Left = 208
       Top = 77
@@ -51,7 +50,7 @@ object shokiForm: TshokiForm
       Font.Color = clWindowText
       Font.Height = -15
       Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
-      Font.Style = []
+      Font.Style = [fsBold]
       ParentBiDiMode = False
       ParentFont = False
       TabOrder = 3
@@ -59,7 +58,7 @@ object shokiForm: TshokiForm
     end
     object radioButton: TButton
       Left = 88
-      Top = 171
+      Top = 169
       Width = 108
       Height = 41
       BiDiMode = bdLeftToRight
@@ -68,7 +67,7 @@ object shokiForm: TshokiForm
       Font.Color = clWindowText
       Font.Height = -15
       Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
-      Font.Style = []
+      Font.Style = [fsBold]
       ParentBiDiMode = False
       ParentFont = False
       TabOrder = 4
@@ -82,10 +81,10 @@ object shokiForm: TshokiForm
       BiDiMode = bdLeftToRight
       Caption = #21942#26989#25152
       Font.Charset = SHIFTJIS_CHARSET
-      Font.Color = clWindowText
+      Font.Color = clBtnText
       Font.Height = -15
       Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
-      Font.Style = []
+      Font.Style = [fsBold]
       ParentBiDiMode = False
       ParentFont = False
       TabOrder = 0
@@ -102,7 +101,7 @@ object shokiForm: TshokiForm
       Font.Color = clWindowText
       Font.Height = -15
       Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
-      Font.Style = []
+      Font.Style = [fsBold]
       ParentBiDiMode = False
       ParentFont = False
       TabOrder = 2
@@ -119,7 +118,7 @@ object shokiForm: TshokiForm
       Font.Color = clWindowText
       Font.Height = -15
       Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
-      Font.Style = []
+      Font.Style = [fsBold]
       ParentBiDiMode = False
       ParentFont = False
       TabOrder = 5
@@ -136,7 +135,7 @@ object shokiForm: TshokiForm
       Font.Color = clWindowText
       Font.Height = -15
       Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
-      Font.Style = []
+      Font.Style = [fsBold]
       ParentBiDiMode = False
       ParentFont = False
       TabOrder = 6

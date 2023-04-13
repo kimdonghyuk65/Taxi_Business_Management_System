@@ -12,6 +12,7 @@ object customerForm: TcustomerForm
   Font.Style = []
   OldCreateOrder = False
   Position = poMainFormCenter
+  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   object Panel1: TPanel
@@ -22,10 +23,8 @@ object customerForm: TcustomerForm
     Align = alClient
     TabOrder = 0
     TabStop = True
-    ExplicitLeft = 129
-    ExplicitTop = -301
-    ExplicitWidth = 376
-    ExplicitHeight = 532
+    ExplicitLeft = 295
+    ExplicitTop = 2
     object Label1: TLabel
       Left = 9
       Top = 10
@@ -306,7 +305,7 @@ object customerForm: TcustomerForm
       Layout = tlCenter
     end
     object customer_huriganaDBEdit: TDBEdit
-      Left = 88
+      Left = 93
       Top = 41
       Width = 135
       Height = 23
@@ -322,8 +321,8 @@ object customerForm: TcustomerForm
       TabOrder = 2
     end
     object customer_nameDBEdit: TDBEdit
-      Left = 88
-      Top = 73
+      Left = 93
+      Top = 76
       Width = 286
       Height = 23
       DataField = 'customer_name'
@@ -354,8 +353,8 @@ object customerForm: TcustomerForm
       TabOrder = 5
     end
     object postal_codeDBEdit: TDBEdit
-      Left = 88
-      Top = 169
+      Left = 93
+      Top = 166
       Width = 70
       Height = 23
       DataField = 'postal_code'
@@ -370,8 +369,8 @@ object customerForm: TcustomerForm
       TabOrder = 6
     end
     object add1DBEdit: TDBEdit
-      Left = 88
-      Top = 201
+      Left = 93
+      Top = 196
       Width = 286
       Height = 23
       DataField = 'add1'
@@ -386,7 +385,7 @@ object customerForm: TcustomerForm
       TabOrder = 7
     end
     object add2DBEdit: TDBEdit
-      Left = 88
+      Left = 93
       Top = 225
       Width = 286
       Height = 23
@@ -546,8 +545,8 @@ object customerForm: TcustomerForm
       TabOrder = 16
     end
     object codeDBEdit: TDBEdit
-      Left = 88
-      Top = 8
+      Left = 93
+      Top = 14
       Width = 62
       Height = 21
       Color = clInfoBk
@@ -601,9 +600,6 @@ object customerForm: TcustomerForm
     Height = 41
     Align = alBottom
     TabOrder = 1
-    ExplicitLeft = -160
-    ExplicitTop = 190
-    ExplicitWidth = 665
     object closeButton: TButton
       Left = 11
       Top = 8
@@ -629,8 +625,6 @@ object customerForm: TcustomerForm
     Align = alLeft
     Caption = 'Panel3'
     TabOrder = 2
-    ExplicitTop = -301
-    ExplicitHeight = 532
     object DBGrid1: TDBGrid
       Left = 1
       Top = 1
@@ -696,23 +690,23 @@ object customerForm: TcustomerForm
       VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast]
       Align = alBottom
       TabOrder = 1
-      ExplicitTop = 510
     end
   end
   object customerDataSource: TDataSource
-    Left = 477
-    Top = 8
+    DataSet = DBConnModule.customerQuery
+    Left = 93
+    Top = 520
   end
   object titleDataSource: TDataSource
-    Left = 448
-    Top = 104
+    Left = 24
+    Top = 520
   end
   object deadline_dayDataSource: TDataSource
     Left = 477
     Top = 203
   end
   object seikyu_ptnDataSource: TDataSource
-    Left = 477
-    Top = 203
+    Left = 165
+    Top = 523
   end
 end

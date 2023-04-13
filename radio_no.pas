@@ -1,11 +1,12 @@
-unit radio_no;
+﻿unit radio_no;
 
 interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.StdCtrls, Vcl.Grids,
-  Vcl.DBGrids, Vcl.DBCtrls, Vcl.Mask, Vcl.ExtCtrls;
+  Vcl.DBGrids, Vcl.DBCtrls, Vcl.Mask, Vcl.ExtCtrls,
+  DBConnectionModule, FireDAC.Stan.Param;
 
 type
   Tradio_noForm = class(TForm)
@@ -16,7 +17,6 @@ type
     Label4: TLabel;
     Label5: TLabel;
     car_noDBEdit: TDBEdit;
-    car_typeDBLookupComboBox: TDBLookupComboBox;
     officeDBLookupComboBox: TDBLookupComboBox;
     DBNavigator2: TDBNavigator;
     DBGrid1: TDBGrid;
@@ -32,10 +32,19 @@ type
     officeDataSource: TDataSource;
     radioDataSource: TDataSource;
     gridDataSource: TDataSource;
+    car_typeDBLookupComboBox: TDBLookupComboBox;
+    procedure FormCreate(Sender: TObject);
+    procedure newButtonClick(Sender: TObject);
+    procedure cancelButtonClick(Sender: TObject);
+    procedure postButtonClick(Sender: TObject);
+    procedure closeButtonClick(Sender: TObject);
+    procedure DBGrid1CellClick(Column: TColumn);
   private
     { Private declarations }
   public
     { Public declarations }
+    procedure LoadData;
+
   end;
 
 var
@@ -44,5 +53,62 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure Tradio_noForm.FormCreate(Sender: TObject);
+begin
+  postButton.Enabled := False; // 초기에 Post 버튼 비활성화
+  cancelButton.Enabled := False; // 초기에 Cancel 버튼 비활성화
+  LoadData;
+end;
+
+procedure Tradio_noForm.LoadData;
+begin
+  DBConnModule.ConnectDB;
+  DBConnModule.ExecuteQuery(DBConnModule.radioQuery, 'SELECT * FROM RADIO');
+  radioDataSource.DataSet := DBConnModule.radioQuery;
+  DBConnModule.ExecuteQuery(DBConnModule.cartypeQuery, 'select * from car_type');
+  car_typeDataSource.DataSet := DBConnModule.cartypeQuery;
+end;
+
+procedure Tradio_noForm.newButtonClick(Sender: TObject);
+begin
+  gridDataSource.DataSet.Insert;
+  newButton.Enabled := False;
+  postButton.Enabled := True;
+  cancelButton.Enabled := True;
+end;
+
+procedure Tradio_noForm.cancelButtonClick(Sender: TObject);
+begin
+  newButton.Enabled := True;
+  postButton.Enabled := False;
+  cancelButton.Enabled := False;
+  LoadData;
+end;
+
+procedure Tradio_noForm.postButtonClick(Sender: TObject);
+begin
+  if radioDataSource.DataSet.State in [dsInsert, dsEdit] then
+  begin
+    radioDataSource.DataSet.Post;
+    LoadData;
+    ShowMessage('保存が完了しました。');
+  end;
+end;
+
+procedure Tradio_noForm.closeButtonClick(Sender: TObject);
+begin
+  Close;
+end;
+
+procedure Tradio_noForm.DBGrid1CellClick(Column: TColumn);
+begin
+  if not (radioDataSource.DataSet.State in [dsInsert, dsEdit]) then
+  begin
+    newButton.Enabled := False;
+    postButton.Enabled := True;
+    cancelButton.Enabled := True;
+  end;
+end;
 
 end.

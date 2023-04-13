@@ -1115,8 +1115,8 @@ object urikake_mishuForm: Turikake_mishuForm
       end
       object entrainmentDBEdit: TDBEdit
         Tag = 4
-        Left = 160
-        Top = 55
+        Left = 165
+        Top = 61
         Width = 49
         Height = 23
         Hint = #65318#65297#65298#12434#25276#19979#12377#12427#12392#22320#21517#12467#12540#12489#12398#21442#29031#12364#20986#26469#12414#12377

@@ -1,11 +1,12 @@
-unit yusou_nippou;
+﻿unit yusou_nippou;
 
 interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.DBCtrls, Vcl.Grids,
-  Vcl.DBGrids, Vcl.ComCtrls, Vcl.Mask, Vcl.StdCtrls, Vcl.ExtCtrls;
+  Vcl.DBGrids, Vcl.ComCtrls, Vcl.Mask, Vcl.StdCtrls, Vcl.ExtCtrls, Data.DB, Vcl.DBCtrls,
+  System.SysUtils, joumu_reference, urikake_mishu; // Add this line
 
 type
   Tyusou_nippouForm = class(TForm)
@@ -71,7 +72,6 @@ type
     fuelDBEdit: TDBEdit;
     oilDBEdit: TDBEdit;
     excess_deficiencyDBEdit: TDBEdit;
-    accruedButton: TButton;
     t_total_mileageDBEdit: TDBEdit;
     t_entrainment_mileageDBEdit: TDBEdit;
     t_since_countDBEdit: TDBEdit;
@@ -148,7 +148,6 @@ type
     deleteButton: TButton;
     Panel3: TPanel;
     Label2: TLabel;
-    listDBGrid: TDBGrid;
     listDBNavigator: TDBNavigator;
     Panel4: TPanel;
     DBTextTot_mil: TDBText;
@@ -170,10 +169,19 @@ type
     DataSourceTotal: TDataSource;
     KintaiDataSource: TDataSource;
     PatternDataSource: TDataSource;
+    accruedButton: TButton;
+
+
+    procedure FormCreate(Sender: TObject); // FormCreate 이벤트 추가
+    procedure s_employeeButtonClick(Sender: TObject);
+    procedure accruedButtonClick(Sender: TObject);
+    procedure business_dayDBEditEnter(Sender: TObject);
   private
     { Private declarations }
   public
     { Public declarations }
+    procedure ShowJoumuReferenceForm;
+    procedure ShowUrikakeMishuForm;  // Add this line
   end;
 
 var
@@ -182,5 +190,81 @@ var
 implementation
 
 {$R *.dfm}
+
+uses DBConnectionModule;
+
+procedure Tyusou_nippouForm.ShowJoumuReferenceForm;
+var
+  JoumuRefForm: Tjoumu_referenceForm;
+begin
+  JoumuRefForm := Tjoumu_referenceForm.Create(Self);
+  try
+    if JoumuRefForm.ShowModal = mrOk then
+    begin
+      s_employeeEdit.Text := JoumuRefForm.SelectedEmployeeCode;
+      s_employeeStaticText.Caption := JoumuRefForm.SelectedEmployeeName;
+      showmessage(JoumuRefForm.SelectedEmployeeName);
+    end;
+  finally
+    JoumuRefForm.Free;
+  end;
+end;
+
+procedure Tyusou_nippouForm.s_employeeButtonClick(Sender: TObject);
+begin
+  ShowJoumuReferenceForm;
+end;
+procedure Tyusou_nippouForm.accruedButtonClick(Sender: TObject);
+begin
+  ShowUrikakeMishuForm;
+end;
+
+procedure Tyusou_nippouForm.ShowUrikakeMishuForm;
+var
+  UrikakeMishuFormInstance: Turikake_mishuForm;
+begin
+  UrikakeMishuFormInstance := Turikake_mishuForm.Create(Self);
+  try
+    UrikakeMishuFormInstance.ShowModal;
+  finally
+    UrikakeMishuFormInstance.Free;
+  end;
+end;
+procedure Tyusou_nippouForm.FormCreate(Sender: TObject);
+var
+  i: Integer;
+  Comp: TComponent;
+begin
+  business_dayDBEdit.Text := FormatDateTime('YYYY/MM/DD', Now); // 현재 날짜로 초기화
+
+  // 데이터베이스 연결
+  DBConnModule.ConnectDB;
+
+  // yusou_nippouDataSource에 데이터 로드
+  DBConnModule.ExecuteQuery(DBConnModule.yusouQuery, 'SELECT * FROM yusou');
+  yusou_nippouDataSource.DataSet := DBConnModule.yusouQuery;
+
+  // kintaiDataSource에 데이터 로드
+  DBConnModule.ExecuteQuery(DBConnModule.kintaiQuery, 'SELECT * FROM kintai');
+  kintaiDataSource.DataSet := DBConnModule.kintaiQuery;
+
+  // 현재 날짜로 business_dayDBEdit 초기화
+  business_dayDBEditEnter(nil);
+
+  // timeGroupBox 내의 TDBEdit 컨트롤들의 DisplayFormat을 'hh:mm'으로 설정
+  for i := 0 to timeGroupBox.ControlCount - 1 do
+  begin
+    Comp := timeGroupBox.Controls[i];
+    if Comp is TDBEdit then
+      TDBEdit(Comp).DisplayFormat := 'hh:mm';
+  end;
+end;
+
+procedure Tyusou_nippouForm.business_dayDBEditEnter(Sender: TObject);
+begin
+  if business_dayDBEdit.Text = '' then
+    business_dayDBEdit.Text := FormatDateTime('YYYY/MM/DD', Now); // 현재 날짜로 초기화
+end;
+
 
 end.

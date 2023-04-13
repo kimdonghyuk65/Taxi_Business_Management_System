@@ -1,0 +1,93 @@
+﻿unit DBConnectionModule;
+
+interface
+
+uses
+  System.SysUtils, System.Classes, FireDAC.Stan.Intf, FireDAC.Stan.Option,
+  FireDAC.Stan.Error, FireDAC.UI.Intf, FireDAC.Phys.Intf, FireDAC.Stan.Def,
+  FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys, FireDAC.Phys.SQLite,
+  FireDAC.Phys.SQLiteDef, FireDAC.Stan.ExprFuncs,
+  FireDAC.Phys.SQLiteWrapper.Stat, FireDAC.VCLUI.Wait, FireDAC.Stan.Param,
+  FireDAC.DatS, FireDAC.DApt.Intf, FireDAC.DApt, Data.DB, FireDAC.Comp.DataSet,Winapi.Windows,
+  FireDAC.Comp.Client;
+type
+  TDBConnModule = class(TDataModule)
+    FDConnection1: TFDConnection;
+    placeQuery: TFDQuery;
+    DataSource1: TDataSource;
+    officeQuery: TFDQuery;
+    placeQueryplace_code: TSmallintField;
+    placeQueryplace_name: TStringField;
+    placeQueryplace_kana: TStringField;
+    employeeQuery: TFDQuery;
+    customerQuery: TFDQuery;
+    SmallintField1: TSmallintField;
+    StringField1: TStringField;
+    StringField2: TStringField;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+    procedure ConnectDB;
+    procedure DisconnectDB;
+    procedure ExecuteQuery1(SQLText: string);
+    procedure ExecuteQuery2(SQLText: string);
+    procedure ExecuteQuery3(SQLText: string);
+    procedure ExecuteQuery4(SQLText: string);
+  end;
+
+var
+  DBConnModule: TDBConnModule;
+
+implementation
+
+{%CLASSGROUP 'Vcl.Controls.TControl'}
+
+{$R *.dfm}
+
+procedure TDBConnModule.ConnectDB;
+ var
+  DatabasePath: string;
+begin
+  DatabasePath := IncludeTrailingPathDelimiter(ExtractFilePath(ParamStr(0))) + 'Taxi.db';
+  OutputDebugString(PChar(DatabasePath));
+  FDConnection1.Params.DriverID := 'SQLite';
+  FDConnection1.Params.Database := DatabasePath;
+  FDConnection1.Connected := True;
+  FDConnection1.StartTransaction; // 트랜잭션 시작 추가
+end;
+
+
+procedure TDBConnModule.ExecuteQuery1(SQLText: string);
+begin
+  placeQuery.SQL.Text := SQLText;
+  placeQuery.Open;
+end;
+
+procedure TDBConnModule.ExecuteQuery2(SQLText: string);
+begin
+  officeQuery.SQL.Text := SQLText;
+  officeQuery.Open;
+end;
+
+procedure TDBConnModule.ExecuteQuery3(SQLText: string);
+begin
+  EMPLOYEEQuery.SQL.Text := SQLText;
+  EMPLOYEEQuery.Open;
+end;
+
+procedure TDBConnModule.ExecuteQuery4(SQLText: string);
+begin
+  customerQuery.SQL.Text := SQLText;
+  customerQuery.Open;
+end;
+
+ procedure TDBConnModule.DisconnectDB;
+begin
+  if FDConnection1.Connected then
+  begin
+    FDConnection1.Connected := False;
+  end;
+end;
+
+end.

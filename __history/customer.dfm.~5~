@@ -1,0 +1,710 @@
+object customerForm: TcustomerForm
+  Left = 0
+  Top = 0
+  Caption = #39015#12288#23458
+  ClientHeight = 646
+  ClientWidth = 686
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poMainFormCenter
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Panel1: TPanel
+    Left = 289
+    Top = 0
+    Width = 397
+    Height = 605
+    Align = alClient
+    TabOrder = 0
+    TabStop = True
+    object Label1: TLabel
+      Left = 9
+      Top = 10
+      Width = 78
+      Height = 20
+      Alignment = taCenter
+      AutoSize = False
+      Caption = #39015#23458#12467#12540#12489
+      Color = clTeal
+      Font.Charset = SHIFTJIS_CHARSET
+      Font.Color = clWhite
+      Font.Height = -15
+      Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+      Font.Style = []
+      ParentColor = False
+      ParentFont = False
+      Transparent = False
+      Layout = tlCenter
+    end
+    object Label2: TLabel
+      Left = 9
+      Top = 42
+      Width = 78
+      Height = 20
+      Alignment = taCenter
+      AutoSize = False
+      Caption = #12501#12522#12460#12490
+      Color = clTeal
+      Font.Charset = SHIFTJIS_CHARSET
+      Font.Color = clWhite
+      Font.Height = -15
+      Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+      Font.Style = []
+      ParentColor = False
+      ParentFont = False
+      Transparent = False
+      Layout = tlCenter
+    end
+    object Label3: TLabel
+      Left = 9
+      Top = 74
+      Width = 78
+      Height = 20
+      Alignment = taCenter
+      AutoSize = False
+      Caption = #39015#23458#21517
+      Color = clTeal
+      Font.Charset = SHIFTJIS_CHARSET
+      Font.Color = clWhite
+      Font.Height = -15
+      Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+      Font.Style = []
+      ParentColor = False
+      ParentFont = False
+      Transparent = False
+      Layout = tlCenter
+    end
+    object Label4: TLabel
+      Left = 9
+      Top = 106
+      Width = 78
+      Height = 20
+      Alignment = taCenter
+      AutoSize = False
+      Caption = #25964#31216
+      Color = clTeal
+      Font.Charset = SHIFTJIS_CHARSET
+      Font.Color = clWhite
+      Font.Height = -15
+      Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+      Font.Style = []
+      ParentColor = False
+      ParentFont = False
+      Transparent = False
+      Layout = tlCenter
+    end
+    object Label5: TLabel
+      Left = 9
+      Top = 138
+      Width = 78
+      Height = 20
+      Alignment = taCenter
+      AutoSize = False
+      Caption = #38651#35441#30058#21495
+      Color = clTeal
+      Font.Charset = SHIFTJIS_CHARSET
+      Font.Color = clWhite
+      Font.Height = -15
+      Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+      Font.Style = []
+      ParentColor = False
+      ParentFont = False
+      Transparent = False
+      Layout = tlCenter
+    end
+    object Label6: TLabel
+      Left = 9
+      Top = 170
+      Width = 78
+      Height = 20
+      Alignment = taCenter
+      AutoSize = False
+      Caption = #37109#20415#30058#21495
+      Color = clTeal
+      Font.Charset = SHIFTJIS_CHARSET
+      Font.Color = clWhite
+      Font.Height = -15
+      Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+      Font.Style = []
+      ParentColor = False
+      ParentFont = False
+      Transparent = False
+      Layout = tlCenter
+    end
+    object Label7: TLabel
+      Left = 9
+      Top = 202
+      Width = 78
+      Height = 20
+      Alignment = taCenter
+      AutoSize = False
+      Caption = #20303#25152
+      Color = clTeal
+      Font.Charset = SHIFTJIS_CHARSET
+      Font.Color = clWhite
+      Font.Height = -15
+      Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+      Font.Style = []
+      ParentColor = False
+      ParentFont = False
+      Transparent = False
+      Layout = tlCenter
+    end
+    object Label8: TLabel
+      Left = 9
+      Top = 291
+      Width = 78
+      Height = 20
+      Alignment = taCenter
+      AutoSize = False
+      Caption = #32224#26085
+      Color = clTeal
+      Font.Charset = SHIFTJIS_CHARSET
+      Font.Color = clWhite
+      Font.Height = -15
+      Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+      Font.Style = []
+      ParentColor = False
+      ParentFont = False
+      Transparent = False
+      Layout = tlCenter
+    end
+    object Label9: TLabel
+      Left = 9
+      Top = 323
+      Width = 78
+      Height = 20
+      Alignment = taCenter
+      AutoSize = False
+      Caption = #38598#37329#20104#23450#26085
+      Color = clTeal
+      Font.Charset = SHIFTJIS_CHARSET
+      Font.Color = clWhite
+      Font.Height = -15
+      Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+      Font.Style = []
+      ParentColor = False
+      ParentFont = False
+      Transparent = False
+      Layout = tlCenter
+    end
+    object Label10: TLabel
+      Left = 9
+      Top = 387
+      Width = 78
+      Height = 20
+      Alignment = taCenter
+      AutoSize = False
+      Caption = #12513#12514
+      Color = clTeal
+      Font.Charset = SHIFTJIS_CHARSET
+      Font.Color = clWhite
+      Font.Height = -15
+      Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+      Font.Style = []
+      ParentColor = False
+      ParentFont = False
+      Transparent = False
+      Layout = tlCenter
+    end
+    object Label11: TLabel
+      Left = 9
+      Top = 419
+      Width = 78
+      Height = 20
+      Alignment = taCenter
+      AutoSize = False
+      Caption = #32368#36234#21021#26399#20516
+      Color = clTeal
+      Font.Charset = SHIFTJIS_CHARSET
+      Font.Color = clWhite
+      Font.Height = -15
+      Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+      Font.Style = []
+      ParentColor = False
+      ParentFont = False
+      Transparent = False
+      Layout = tlCenter
+    end
+    object Label13: TLabel
+      Left = 135
+      Top = 322
+      Width = 15
+      Height = 15
+      Caption = #26085
+      Font.Charset = SHIFTJIS_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+      Font.Style = []
+      ParentFont = False
+    end
+    object Label12: TLabel
+      Left = 9
+      Top = 355
+      Width = 78
+      Height = 20
+      Alignment = taCenter
+      AutoSize = False
+      Caption = #32368#36234#27531#39640
+      Color = clTeal
+      Font.Charset = SHIFTJIS_CHARSET
+      Font.Color = clWhite
+      Font.Height = -15
+      Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+      Font.Style = []
+      ParentColor = False
+      ParentFont = False
+      Transparent = False
+      Layout = tlCenter
+    end
+    object Label14: TLabel
+      Left = 9
+      Top = 260
+      Width = 78
+      Height = 20
+      Alignment = taCenter
+      AutoSize = False
+      Caption = #35531#27714#26360
+      Color = clTeal
+      Font.Charset = SHIFTJIS_CHARSET
+      Font.Color = clWhite
+      Font.Height = -15
+      Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+      Font.Style = []
+      ParentColor = False
+      ParentFont = False
+      Transparent = False
+      Layout = tlCenter
+    end
+    object Label15: TLabel
+      Left = 9
+      Top = 451
+      Width = 136
+      Height = 20
+      Alignment = taCenter
+      AutoSize = False
+      Caption = #35531#27714#26360#20986#21147#12497#12479#12540#12531
+      Color = clTeal
+      Font.Charset = SHIFTJIS_CHARSET
+      Font.Color = clWhite
+      Font.Height = -15
+      Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+      Font.Style = []
+      ParentColor = False
+      ParentFont = False
+      Transparent = False
+      Layout = tlCenter
+    end
+    object customer_huriganaDBEdit: TDBEdit
+      Left = 93
+      Top = 41
+      Width = 135
+      Height = 23
+      DataField = 'customer_hurigana'
+      DataSource = customerDataSource
+      Font.Charset = SHIFTJIS_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+      Font.Style = []
+      ImeMode = imSKata
+      ParentFont = False
+      TabOrder = 2
+    end
+    object customer_nameDBEdit: TDBEdit
+      Left = 93
+      Top = 76
+      Width = 286
+      Height = 23
+      DataField = 'customer_name'
+      DataSource = customerDataSource
+      Font.Charset = SHIFTJIS_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+      Font.Style = []
+      ImeMode = imHira
+      ParentFont = False
+      TabOrder = 3
+    end
+    object telDBEdit: TDBEdit
+      Left = 88
+      Top = 137
+      Width = 135
+      Height = 23
+      DataField = 'tel'
+      DataSource = customerDataSource
+      Font.Charset = SHIFTJIS_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+      Font.Style = []
+      ImeMode = imDisable
+      ParentFont = False
+      TabOrder = 5
+    end
+    object postal_codeDBEdit: TDBEdit
+      Left = 93
+      Top = 166
+      Width = 70
+      Height = 23
+      DataField = 'postal_code'
+      DataSource = customerDataSource
+      Font.Charset = SHIFTJIS_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+      Font.Style = []
+      ImeMode = imDisable
+      ParentFont = False
+      TabOrder = 6
+    end
+    object add1DBEdit: TDBEdit
+      Left = 93
+      Top = 196
+      Width = 286
+      Height = 23
+      DataField = 'add1'
+      DataSource = customerDataSource
+      Font.Charset = SHIFTJIS_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+      Font.Style = []
+      ImeMode = imHira
+      ParentFont = False
+      TabOrder = 7
+    end
+    object add2DBEdit: TDBEdit
+      Left = 88
+      Top = 225
+      Width = 286
+      Height = 23
+      DataField = 'add2'
+      DataSource = customerDataSource
+      Font.Charset = SHIFTJIS_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+      Font.Style = []
+      ImeMode = imHira
+      ParentFont = False
+      TabOrder = 8
+    end
+    object noteDBEdit: TDBEdit
+      Left = 88
+      Top = 386
+      Width = 285
+      Height = 23
+      DataField = 'note'
+      DataSource = customerDataSource
+      Font.Charset = SHIFTJIS_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+      Font.Style = []
+      ImeMode = imHira
+      ParentFont = False
+      TabOrder = 14
+    end
+    object titleDBLookupComboBox: TDBLookupComboBox
+      Left = 88
+      Top = 105
+      Width = 77
+      Height = 23
+      DataField = 'title'
+      DataSource = customerDataSource
+      Font.Charset = SHIFTJIS_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+      Font.Style = []
+      KeyField = 'title_name'
+      ListField = 'title_name'
+      ListSource = titleDataSource
+      ParentFont = False
+      TabOrder = 4
+    end
+    object collectionDBEdit: TDBEdit
+      Left = 88
+      Top = 322
+      Width = 46
+      Height = 23
+      DataField = 'collection_day'
+      DataSource = customerDataSource
+      Font.Charset = SHIFTJIS_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+      Font.Style = []
+      ImeMode = imDisable
+      ParentFont = False
+      TabOrder = 12
+    end
+    object DBLookupComboBox1: TDBLookupComboBox
+      Left = 88
+      Top = 290
+      Width = 67
+      Height = 23
+      DataField = 'deadline_day'
+      DataSource = customerDataSource
+      Font.Charset = SHIFTJIS_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+      Font.Style = []
+      KeyField = 'deadline_code'
+      ListField = 'deadline_day'
+      ListSource = deadline_dayDataSource
+      ParentFont = False
+      TabOrder = 10
+    end
+    object saleDBCheckBox: TDBCheckBox
+      Left = 93
+      Top = 356
+      Width = 113
+      Height = 17
+      Caption = #34920#31034#12373#12379#12394#12356
+      DataField = 'accrued_fg'
+      DataSource = customerDataSource
+      TabOrder = 13
+      ValueChecked = 'False'
+      ValueUnchecked = 'True'
+    end
+    object DBRadioGroup1: TDBRadioGroup
+      Left = 173
+      Top = 277
+      Width = 145
+      Height = 37
+      Columns = 2
+      DataField = 'period_fg'
+      DataSource = customerDataSource
+      Font.Charset = SHIFTJIS_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+      Font.Style = []
+      Items.Strings = (
+        #32716#26376
+        #32716#12293#26376)
+      ParentFont = False
+      TabOrder = 11
+      TabStop = True
+      Values.Strings = (
+        '0'
+        '1')
+    end
+    object sale_balanceDBEdit: TDBEdit
+      Left = 88
+      Top = 418
+      Width = 100
+      Height = 23
+      AutoSize = False
+      DataField = 'sale_balance'
+      DataSource = customerDataSource
+      Font.Charset = SHIFTJIS_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+      Font.Style = []
+      ImeMode = imDisable
+      ParentFont = False
+      TabOrder = 15
+    end
+    object newButton: TButton
+      Left = 298
+      Top = 7
+      Width = 75
+      Height = 25
+      Caption = #26032#12288#35215
+      TabOrder = 0
+    end
+    object cancelButton: TButton
+      Left = 218
+      Top = 504
+      Width = 75
+      Height = 25
+      Caption = #12461#12515#12531#12475#12523
+      TabOrder = 17
+    end
+    object postButton: TButton
+      Left = 298
+      Top = 504
+      Width = 75
+      Height = 25
+      Caption = #30331#12288#37682
+      TabOrder = 16
+    end
+    object codeDBEdit: TDBEdit
+      Left = 93
+      Top = 14
+      Width = 62
+      Height = 21
+      Color = clInfoBk
+      DataField = 'customer_code'
+      DataSource = customerDataSource
+      ImeMode = imDisable
+      TabOrder = 1
+    end
+    object deleteButton: TButton
+      Left = 11
+      Top = 503
+      Width = 91
+      Height = 25
+      Caption = #21066#38500#12539#20462#27491
+      TabOrder = 18
+      TabStop = False
+    end
+    object billDBCheckBox: TDBCheckBox
+      Left = 93
+      Top = 261
+      Width = 113
+      Height = 17
+      Caption = #30330#34892#12377#12427
+      DataField = 'bill_fg'
+      DataSource = customerDataSource
+      TabOrder = 9
+    end
+    object DBLookupComboBox2: TDBLookupComboBox
+      Left = 146
+      Top = 450
+      Width = 128
+      Height = 23
+      DataField = 'seikyu_format'
+      DataSource = customerDataSource
+      Font.Charset = SHIFTJIS_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+      Font.Style = []
+      KeyField = 'pattern_code'
+      ListField = 'pattern_name'
+      ListSource = seikyu_ptnDataSource
+      ParentFont = False
+      TabOrder = 19
+    end
+  end
+  object Panel2: TPanel
+    Left = 0
+    Top = 605
+    Width = 686
+    Height = 41
+    Align = alBottom
+    TabOrder = 1
+    object closeButton: TButton
+      Left = 11
+      Top = 8
+      Width = 75
+      Height = 25
+      Caption = #38281#12376#12427
+      TabOrder = 0
+    end
+    object printButton: TButton
+      Left = 589
+      Top = 8
+      Width = 75
+      Height = 25
+      Caption = #21360#12288#21047
+      TabOrder = 1
+    end
+  end
+  object Panel3: TPanel
+    Left = 0
+    Top = 0
+    Width = 289
+    Height = 605
+    Align = alLeft
+    Caption = 'Panel3'
+    TabOrder = 2
+    object DBGrid1: TDBGrid
+      Left = 1
+      Top = 1
+      Width = 287
+      Height = 582
+      TabStop = False
+      Align = alClient
+      DataSource = customerDataSource
+      Font.Charset = SHIFTJIS_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+      Font.Style = []
+      Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit]
+      ParentFont = False
+      ReadOnly = True
+      TabOrder = 0
+      TitleFont.Charset = SHIFTJIS_CHARSET
+      TitleFont.Color = clWindowText
+      TitleFont.Height = -12
+      TitleFont.Name = #65325#65331' '#65328#12468#12471#12483#12463
+      TitleFont.Style = []
+      Columns = <
+        item
+          Expanded = False
+          FieldName = 'customer_code'
+          Title.Alignment = taCenter
+          Title.Caption = #12467#12540#12489
+          Title.Font.Charset = SHIFTJIS_CHARSET
+          Title.Font.Color = clWindowText
+          Title.Font.Height = -15
+          Title.Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+          Title.Font.Style = []
+          Width = 35
+          Visible = True
+        end
+        item
+          Alignment = taCenter
+          Expanded = False
+          FieldName = 'delete_fg'
+          Title.Alignment = taCenter
+          Title.Caption = #21066#38500
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'customer_name'
+          Title.Alignment = taCenter
+          Title.Font.Charset = SHIFTJIS_CHARSET
+          Title.Font.Color = clWindowText
+          Title.Font.Height = -15
+          Title.Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+          Title.Font.Style = []
+          Visible = True
+        end>
+    end
+    object DBNavigator1: TDBNavigator
+      Left = 1
+      Top = 583
+      Width = 287
+      Height = 21
+      DataSource = customerDataSource
+      VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast]
+      Align = alBottom
+      TabOrder = 1
+    end
+  end
+  object customerDataSource: TDataSource
+    DataSet = DBConnModule.customerQuery
+    Left = 477
+    Top = 8
+  end
+  object titleDataSource: TDataSource
+    Left = 472
+    Top = 112
+  end
+  object deadline_dayDataSource: TDataSource
+    Left = 477
+    Top = 203
+  end
+  object seikyu_ptnDataSource: TDataSource
+    Left = 477
+    Top = 203
+  end
+end

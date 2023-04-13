@@ -3,42 +3,42 @@
 interface
 
 uses
-  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.StdCtrls, Vcl.DBCtrls,
-  Vcl.Grids, Vcl.DBGrids, Vcl.Mask, Vcl.ExtCtrls, DBConnectionModule, FireDAC.Stan.Param;
+Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.StdCtrls, Vcl.DBCtrls,
+Vcl.Grids, Vcl.DBGrids, Vcl.Mask, Vcl.ExtCtrls, DBConnectionModule, FireDAC.Stan.Param;
 
 type
-  TofficeForm = class(TForm)
-    Panel1: TPanel;
-    Label1: TLabel;
-    Label2: TLabel;
-    Label3: TLabel;
-    office_nameDBEdit: TDBEdit;
-    DBGrid1: TDBGrid;
-    DBNavigator1: TDBNavigator;
-    newButton: TButton;
-    cancelButton: TButton;
-    postButton: TButton;
-    city_codeDBEdit: TDBEdit;
-    office_codeDBEdit: TDBEdit;
-    buttonPanel: TPanel;
-    closeButton: TButton;
-    officeDataSource: TDataSource;
-    procedure postButtonClick(Sender: TObject);
-    procedure FormCreate(Sender: TObject);
-    procedure newButtonClick(Sender: TObject); // 추가
-    procedure DBGrid1CellClick(Column: TColumn);
-    procedure cancelButtonClick(Sender: TObject);
-    procedure closeButtonClick(Sender: TObject); // 추가
-  private
-    { Private declarations }
-  public
-    { Public declarations }
-    procedure LoadData;
-  end;
+TofficeForm = class(TForm)
+Panel1: TPanel;
+Label1: TLabel;
+Label2: TLabel;
+Label3: TLabel;
+office_nameDBEdit: TDBEdit;
+DBGrid1: TDBGrid;
+DBNavigator1: TDBNavigator;
+newButton: TButton;
+cancelButton: TButton;
+postButton: TButton;
+city_codeDBEdit: TDBEdit;
+office_codeDBEdit: TDBEdit;
+buttonPanel: TPanel;
+closeButton: TButton;
+officeDataSource: TDataSource;
+procedure postButtonClick(Sender: TObject);
+procedure FormCreate(Sender: TObject);
+procedure newButtonClick(Sender: TObject); // 추가
+procedure DBGrid1CellClick(Column: TColumn);
+procedure cancelButtonClick(Sender: TObject);
+procedure closeButtonClick(Sender: TObject); // 추가
+private
+{ Private declarations }
+public
+{ Public declarations }
+procedure LoadData;
+end;
 
 var
-  officeForm: TofficeForm;
+officeForm: TofficeForm;
 
 implementation
 
@@ -46,47 +46,55 @@ implementation
 
 procedure TofficeForm.postButtonClick(Sender: TObject);
 var
-  office_code: Integer;
-  city_code: Integer;
+office_code: Integer;
+city_code: Integer;
 begin
-  if officeDataSource.DataSet.State = dsInsert then // 추가 모드인 경우
-  begin
- 
-    officeDataSource.DataSet.Post; // 현재 편집 중인 레코드 저장
-    LoadData; // 데이터를 다시 로드하여 그리드를 새로 고침
-    ShowMessage('저장되었습니다a.');
-  end
-  else if officeDataSource.DataSet.State = dsEdit then // 수정 모드인 경우
-  begin
-    officeDataSource.DataSet.Post; // 현재 편집 중인 레코드 저장
-    LoadData; // 데이터를 다시 로드하여 그리드를 새로 고침
-    ShowMessage('저장되었습니다b.');
-  end;
+if officeDataSource.DataSet.State = dsInsert then // 추가 모드인 경우
+begin
+officeDataSource.DataSet.Post; // 현재 편집 중인 레코드 저장
+LoadData; // 데이터를 다시 로드하여 그리드를 새로 고침
+ShowMessage('保存が完了しました。');
+end
+else if officeDataSource.DataSet.State = dsEdit then // 수정 모드인 경우
+begin
+officeDataSource.DataSet.Post; // 현재 편집 중인 레코드 저장
+LoadData; // 데이터를 다시 로드하여 그리드를 새로 고침
+ShowMessage('保存が完了しました。');
 end;
+end;
+
 procedure TofficeForm.LoadData;
 begin
-  DBConnModule.ConnectDB;
-  DBConnModule.ExecuteQuery2('SELECT * FROM OFFICE');
-  officeDataSource.DataSet := DBConnModule.FDQuery2;
+DBConnModule.ConnectDB;
+DBConnModule.ExecuteQuery(DBConnModule.officeQuery, 'SELECT * FROM OFFICE');
+officeDataSource.DataSet := DBConnModule.officeQuery;
 end;
 
 procedure TofficeForm.newButtonClick(Sender: TObject);
 var
-  new_office_code: Integer;
+  new_office_code: Variant; // Variant 타입으로 변경
 begin
-//  if officeDataSource.DataSet.State <> dsInsert then // 현재 레코드가 삽입 상태가 아닌 경우에만 추가 모드로 전환합니다.
-    officeDataSource.DataSet.Insert; // 새 레코드 추가
-        newButton.Enabled := False;
-    postButton.Enabled := True; // Enable the Post button when DBGrid is clicked
-    cancelButton.Enabled := True; // Enable the Cancel button when DBGrid is clicked
+  // 최대값 검색
+  new_office_code := DBConnModule.GetMaxOfficeCode;
+//  // 최대값이 없는 경우 0으로 설정
+//  if VarIsNull(new_office_code) then
+//    new_office_code := 0;
+  // 최대값 + 1을 새로운 레코드의 office_code 필드에 설정
+  officeDataSource.DataSet.Insert;
+  office_codeDBEdit.Field.AsInteger := new_office_code + 1;
+
+  newButton.Enabled := False;
+  postButton.Enabled := True;
+  cancelButton.Enabled := True;
 end;
 
 procedure TofficeForm.FormCreate(Sender: TObject);
 begin
-  postButton.Enabled := False; // Disable the Post button initially
-  cancelButton.Enabled := False; // Disable the Cancel button initially
-  LoadData;
+postButton.Enabled := False; // Disable the Post button initially
+cancelButton.Enabled := False; // Disable the Cancel button initially
+LoadData;
 end;
+
 procedure TofficeForm.cancelButtonClick(Sender: TObject);
 begin
    newButton.Enabled := True;
@@ -109,4 +117,5 @@ begin
     cancelButton.Enabled := True; // Enable the Cancel button when DBGrid is clicked
 end;
   end;
+
 end.
