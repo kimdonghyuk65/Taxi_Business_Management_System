@@ -1,0 +1,238 @@
+object officeForm: TofficeForm
+  Left = 0
+  Top = 0
+  Caption = #21942#26989#25152
+  ClientHeight = 381
+  ClientWidth = 347
+  Color = clBtnFace
+  Font.Charset = SHIFTJIS_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poMainFormCenter
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 347
+    Height = 344
+    Align = alClient
+    TabOrder = 0
+    TabStop = True
+    object Label1: TLabel
+      Left = 10
+      Top = 14
+      Width = 85
+      Height = 23
+      Alignment = taCenter
+      AutoSize = False
+      Caption = #21942#26989#25152#12467#12540#12489
+      Color = clTeal
+      Font.Charset = SHIFTJIS_CHARSET
+      Font.Color = clWhite
+      Font.Height = -15
+      Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+      Font.Style = []
+      ParentColor = False
+      ParentFont = False
+      Transparent = False
+      Layout = tlCenter
+    end
+    object Label2: TLabel
+      Left = 10
+      Top = 46
+      Width = 85
+      Height = 23
+      Alignment = taCenter
+      AutoSize = False
+      Caption = #21942#26989#25152#21517
+      Color = clTeal
+      Font.Charset = SHIFTJIS_CHARSET
+      Font.Color = clWhite
+      Font.Height = -15
+      Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+      Font.Style = []
+      ParentColor = False
+      ParentFont = False
+      Transparent = False
+      Layout = tlCenter
+    end
+    object Label3: TLabel
+      Left = 10
+      Top = 78
+      Width = 85
+      Height = 23
+      Alignment = taCenter
+      AutoSize = False
+      Caption = #24066#30010#26449#12467#12540#12489
+      Color = clTeal
+      Font.Charset = SHIFTJIS_CHARSET
+      Font.Color = clWhite
+      Font.Height = -15
+      Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+      Font.Style = []
+      ParentColor = False
+      ParentFont = False
+      Transparent = False
+      Layout = tlCenter
+    end
+    object office_nameDBEdit: TDBEdit
+      Left = 87
+      Top = 46
+      Width = 135
+      Height = 23
+      AutoSize = False
+      DataField = 'office_name'
+      DataSource = officeDataSource
+      Font.Charset = SHIFTJIS_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 2
+    end
+    object DBGrid1: TDBGrid
+      Left = 24
+      Top = 143
+      Width = 306
+      Height = 166
+      TabStop = False
+      Color = clBtnFace
+      DataSource = officeDataSource
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit]
+      ParentFont = False
+      ReadOnly = True
+      TabOrder = 6
+      TitleFont.Charset = DEFAULT_CHARSET
+      TitleFont.Color = clWindowText
+      TitleFont.Height = -11
+      TitleFont.Name = 'Tahoma'
+      TitleFont.Style = []
+      OnCellClick = DBGrid1CellClick
+      Columns = <
+        item
+          Expanded = False
+          FieldName = 'office_code'
+          ImeName = 'Japanese'
+          Title.Alignment = taCenter
+          Title.Font.Charset = SHIFTJIS_CHARSET
+          Title.Font.Color = clWindowText
+          Title.Font.Height = -15
+          Title.Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+          Title.Font.Style = []
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'office_name'
+          ImeName = 'Japanese'
+          Title.Alignment = taCenter
+          Title.Font.Charset = SHIFTJIS_CHARSET
+          Title.Font.Color = clWindowText
+          Title.Font.Height = -15
+          Title.Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+          Title.Font.Style = []
+          Width = 185
+          Visible = True
+        end>
+    end
+    object DBNavigator1: TDBNavigator
+      Left = 117
+      Top = 312
+      Width = 195
+      Height = 26
+      DataSource = officeDataSource
+      VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast, nbDelete]
+      TabOrder = 7
+    end
+    object newButton: TButton
+      Left = 228
+      Top = 12
+      Width = 75
+      Height = 25
+      Caption = #26032#12288#35215
+      TabOrder = 0
+      OnClick = newButtonClick
+    end
+    object cancelButton: TButton
+      Left = 147
+      Top = 112
+      Width = 75
+      Height = 25
+      Caption = #12461#12515#12531#12475#12523
+      TabOrder = 5
+      OnClick = cancelButtonClick
+    end
+    object postButton: TButton
+      Left = 228
+      Top = 112
+      Width = 75
+      Height = 25
+      Caption = #30331#12288#37682
+      TabOrder = 4
+      OnClick = postButtonClick
+    end
+    object city_codeDBEdit: TDBEdit
+      Left = 101
+      Top = 75
+      Width = 67
+      Height = 23
+      AutoSize = False
+      DataField = 'city_code'
+      DataSource = officeDataSource
+      Font.Charset = SHIFTJIS_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = #65325#65331' '#65328#12468#12471#12483#12463
+      Font.Style = []
+      ImeMode = imDisable
+      MaxLength = 3
+      ParentFont = False
+      TabOrder = 3
+    end
+    object office_codeDBEdit: TDBEdit
+      Left = 101
+      Top = 19
+      Width = 65
+      Height = 21
+      Color = clInfoBk
+      DataField = 'office_code'
+      DataSource = officeDataSource
+      ImeMode = imDisable
+      MaxLength = 4
+      TabOrder = 1
+    end
+  end
+  object buttonPanel: TPanel
+    Left = 0
+    Top = 344
+    Width = 347
+    Height = 37
+    Align = alBottom
+    TabOrder = 1
+    TabStop = True
+    object closeButton: TButton
+      Left = 8
+      Top = 6
+      Width = 75
+      Height = 25
+      Caption = #38281#12376#12427
+      TabOrder = 0
+      OnClick = closeButtonClick
+    end
+  end
+  object officeDataSource: TDataSource
+    Left = 272
+    Top = 51
+  end
+end

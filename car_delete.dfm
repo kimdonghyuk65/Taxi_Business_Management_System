@@ -1,9 +1,9 @@
-object car_deleteForm: Tcar_deleteForm
+﻿object 車両削除: T車両削除
   Left = 0
   Top = 0
   Caption = #36554#20001#21066#38500
-  ClientHeight = 97
-  ClientWidth = 264
+  ClientHeight = 106
+  ClientWidth = 273
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -14,8 +14,8 @@ object car_deleteForm: Tcar_deleteForm
   PixelsPerInch = 96
   TextHeight = 13
   object Label5: TLabel
-    Left = 8
-    Top = 8
+    Left = 11
+    Top = 17
     Width = 70
     Height = 23
     Alignment = taCenter
@@ -33,8 +33,8 @@ object car_deleteForm: Tcar_deleteForm
     Layout = tlCenter
   end
   object end_carDBEdit: TDBEdit
-    Left = 80
-    Top = 8
+    Left = 83
+    Top = 17
     Width = 117
     Height = 23
     DataField = 'end_car'
@@ -42,16 +42,16 @@ object car_deleteForm: Tcar_deleteForm
     TabOrder = 0
   end
   object cancelButton: TButton
-    Left = 94
-    Top = 47
+    Left = 97
+    Top = 56
     Width = 75
     Height = 25
     Caption = #12461#12515#12531#12475#12523
     TabOrder = 1
   end
   object deleteButton: TButton
-    Left = 174
-    Top = 47
+    Left = 177
+    Top = 56
     Width = 75
     Height = 25
     Caption = #21066#12288#38500

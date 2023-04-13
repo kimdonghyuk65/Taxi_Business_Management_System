@@ -88,7 +88,7 @@ object placeForm: TplaceForm
     end
     object nameDBEdit: TDBEdit
       Left = 88
-      Top = 71
+      Top = 68
       Width = 226
       Height = 23
       AutoSize = False
@@ -155,7 +155,7 @@ object placeForm: TplaceForm
       TabOrder = 5
     end
     object postButton: TButton
-      Left = 285
+      Left = 286
       Top = 109
       Width = 75
       Height = 25
@@ -207,17 +207,21 @@ object placeForm: TplaceForm
       TabOrder = 0
     end
     object printButton: TButton
-      Left = 290
-      Top = 8
+      Left = 291
+      Top = 6
       Width = 75
       Height = 25
       Caption = #21360#12288#21047
       TabOrder = 1
+      OnClick = printButtonClick
     end
   end
   object placeDataSource: TDataSource
-    DataSet = DBConnModule.FDQuery1
     Left = 88
     Top = 347
+  end
+  object PrintDialog1: TPrintDialog
+    Left = 16
+    Top = 352
   end
 end

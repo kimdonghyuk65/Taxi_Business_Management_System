@@ -144,7 +144,7 @@ end;
 
 procedure Ttaxi_mainForm.tenkoComboBoxChange(Sender: TObject);
  var   tenkoForm: TtenkoForm;
-       car_deleteForm: Tcar_deleteForm;
+//       car_deleteForm: Tcar_deleteForm;
 
   begin
     if tenkoComboBox.ItemIndex = 0 then
@@ -154,8 +154,8 @@ procedure Ttaxi_mainForm.tenkoComboBoxChange(Sender: TObject);
       end;
     if tenkoComboBox.ItemIndex = 1 then
       begin
-        car_deleteForm := Tcar_deleteForm.Create(Application);
-        car_deleteForm.ShowModal;
+//        car_deleteForm := Tcar_deleteForm.Create(Application);
+//        car_deleteForm.ShowModal;
       end;
   end;
 

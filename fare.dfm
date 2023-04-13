@@ -12,6 +12,7 @@ object fareForm: TfareForm
   Font.Style = []
   OldCreateOrder = False
   Position = poMainFormCenter
+  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   object Panel1: TPanel
@@ -22,8 +23,6 @@ object fareForm: TfareForm
     Align = alClient
     TabOrder = 0
     TabStop = True
-    ExplicitWidth = 342
-    ExplicitHeight = 163
     object Label12: TLabel
       Left = 82
       Top = 12
@@ -189,9 +188,10 @@ object fareForm: TfareForm
       ImeMode = imDisable
       ParentFont = False
       TabOrder = 0
+      OnClick = DBEditEnter
     end
     object DBEdit2: TDBEdit
-      Left = 82
+      Left = 85
       Top = 55
       Width = 81
       Height = 23
@@ -205,6 +205,7 @@ object fareForm: TfareForm
       ImeMode = imDisable
       ParentFont = False
       TabOrder = 3
+      OnClick = DBEditEnter
     end
     object DBEdit5: TDBEdit
       Left = 82
@@ -221,6 +222,7 @@ object fareForm: TfareForm
       ImeMode = imDisable
       ParentFont = False
       TabOrder = 6
+      OnClick = DBEditEnter
     end
     object DBEdit6: TDBEdit
       Left = 82
@@ -237,6 +239,7 @@ object fareForm: TfareForm
       ImeMode = imDisable
       ParentFont = False
       TabOrder = 9
+      OnClick = DBEditEnter
     end
     object DBEdit3: TDBEdit
       Left = 162
@@ -253,6 +256,7 @@ object fareForm: TfareForm
       ImeMode = imDisable
       ParentFont = False
       TabOrder = 1
+      OnClick = DBEditEnter
     end
     object DBEdit4: TDBEdit
       Left = 162
@@ -269,6 +273,7 @@ object fareForm: TfareForm
       ImeMode = imDisable
       ParentFont = False
       TabOrder = 4
+      OnClick = DBEditEnter
     end
     object DBEdit7: TDBEdit
       Left = 162
@@ -285,6 +290,7 @@ object fareForm: TfareForm
       ImeMode = imDisable
       ParentFont = False
       TabOrder = 7
+      OnClick = DBEditEnter
     end
     object DBEdit8: TDBEdit
       Left = 162
@@ -301,6 +307,7 @@ object fareForm: TfareForm
       ImeMode = imDisable
       ParentFont = False
       TabOrder = 10
+      OnClick = DBEditEnter
     end
     object DBEdit9: TDBEdit
       Left = 243
@@ -317,6 +324,7 @@ object fareForm: TfareForm
       ImeMode = imDisable
       ParentFont = False
       TabOrder = 2
+      OnClick = DBEditEnter
     end
     object DBEdit10: TDBEdit
       Left = 243
@@ -333,6 +341,7 @@ object fareForm: TfareForm
       ImeMode = imDisable
       ParentFont = False
       TabOrder = 5
+      OnClick = DBEditEnter
     end
     object DBEdit11: TDBEdit
       Left = 243
@@ -349,6 +358,7 @@ object fareForm: TfareForm
       ImeMode = imDisable
       ParentFont = False
       TabOrder = 8
+      OnClick = DBEditEnter
     end
     object DBEdit12: TDBEdit
       Left = 243
@@ -365,6 +375,7 @@ object fareForm: TfareForm
       ImeMode = imDisable
       ParentFont = False
       TabOrder = 11
+      OnClick = DBEditEnter
     end
     object cancelButton: TButton
       Left = 179
@@ -381,6 +392,7 @@ object fareForm: TfareForm
       Height = 25
       Caption = #30331#12288#37682
       TabOrder = 12
+      OnClick = postButtonClick
     end
   end
   object buttonPanel: TPanel
@@ -391,8 +403,6 @@ object fareForm: TfareForm
     Align = alBottom
     TabOrder = 1
     TabStop = True
-    ExplicitTop = 163
-    ExplicitWidth = 342
     object closeButton: TButton
       Left = 8
       Top = 6
@@ -403,7 +413,8 @@ object fareForm: TfareForm
     end
   end
   object fareDataSource: TDataSource
-    Left = 280
-    Top = 173
+    DataSet = DBConnModule.fareQuery
+    Left = 32
+    Top = 141
   end
 end

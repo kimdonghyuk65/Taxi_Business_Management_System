@@ -3,7 +3,7 @@ object radio_noForm: Tradio_noForm
   Top = 0
   Caption = #28961#32218#8470
   ClientHeight = 429
-  ClientWidth = 406
+  ClientWidth = 413
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -12,12 +12,13 @@ object radio_noForm: Tradio_noForm
   Font.Style = []
   OldCreateOrder = False
   Position = poMainFormCenter
+  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 406
+    Width = 413
     Height = 392
     Align = alClient
     Font.Charset = SHIFTJIS_CHARSET
@@ -28,9 +29,6 @@ object radio_noForm: Tradio_noForm
     ParentFont = False
     TabOrder = 0
     TabStop = True
-    ExplicitTop = -135
-    ExplicitWidth = 392
-    ExplicitHeight = 366
     object Label1: TLabel
       Left = 13
       Top = 19
@@ -104,6 +102,7 @@ object radio_noForm: Tradio_noForm
       Font.Style = []
       ParentColor = False
       ParentFont = False
+      Transparent = False
       Layout = tlCenter
     end
     object Label5: TLabel
@@ -122,11 +121,12 @@ object radio_noForm: Tradio_noForm
       Font.Style = []
       ParentColor = False
       ParentFont = False
+      Transparent = False
       Layout = tlCenter
     end
     object car_noDBEdit: TDBEdit
       Left = 85
-      Top = 46
+      Top = 48
       Width = 50
       Height = 23
       DataField = 'car_no'
@@ -134,20 +134,8 @@ object radio_noForm: Tradio_noForm
       ImeMode = imDisable
       TabOrder = 2
     end
-    object car_typeDBLookupComboBox: TDBLookupComboBox
-      Left = 85
-      Top = 73
-      Width = 74
-      Height = 23
-      DataField = 'car_type_code'
-      DataSource = radioDataSource
-      KeyField = 'car_type_code'
-      ListField = 'car_type_name'
-      ListSource = car_typeDataSource
-      TabOrder = 3
-    end
     object officeDBLookupComboBox: TDBLookupComboBox
-      Left = 237
+      Left = 241
       Top = 44
       Width = 122
       Height = 23
@@ -156,26 +144,26 @@ object radio_noForm: Tradio_noForm
       KeyField = 'office_code'
       ListField = 'office_name'
       ListSource = officeDataSource
-      TabOrder = 4
+      TabOrder = 3
     end
     object DBNavigator2: TDBNavigator
-      Left = 240
-      Top = 343
+      Left = 241
+      Top = 347
       Width = 156
       Height = 26
       DataSource = gridDataSource
       VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast]
-      TabOrder = 8
+      TabOrder = 7
     end
     object DBGrid1: TDBGrid
-      Left = 4
-      Top = 139
+      Left = 22
+      Top = 138
       Width = 391
       Height = 203
       TabStop = False
       DataSource = gridDataSource
       Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit]
-      TabOrder = 9
+      TabOrder = 8
       TitleFont.Charset = SHIFTJIS_CHARSET
       TitleFont.Color = clWindowText
       TitleFont.Height = -15
@@ -232,15 +220,15 @@ object radio_noForm: Tradio_noForm
       Width = 75
       Height = 25
       Caption = #12461#12515#12531#12475#12523
-      TabOrder = 7
+      TabOrder = 6
     end
     object postButton: TButton
-      Left = 309
+      Left = 308
       Top = 107
       Width = 75
       Height = 25
       Caption = #30331#12288#37682
-      TabOrder = 6
+      TabOrder = 5
     end
     object newButton: TButton
       Left = 309
@@ -249,16 +237,17 @@ object radio_noForm: Tradio_noForm
       Height = 25
       Caption = #26032#12288#35215
       TabOrder = 0
+      OnClick = newButtonClick
     end
     object start_carDBEdit: TDBEdit
-      Left = 237
-      Top = 72
+      Left = 241
+      Top = 73
       Width = 119
       Height = 23
       DataField = 'start_car'
       DataSource = radioDataSource
       ImeMode = imDisable
-      TabOrder = 5
+      TabOrder = 4
     end
     object codeDBEdit: TDBEdit
       Left = 85
@@ -271,11 +260,23 @@ object radio_noForm: Tradio_noForm
       ImeMode = imDisable
       TabOrder = 1
     end
+    object car_typeDBLookupComboBox: TDBLookupComboBox
+      Left = 85
+      Top = 75
+      Width = 74
+      Height = 23
+      DataField = 'cat_type_code'
+      DataSource = radioDataSource
+      KeyField = 'car_type_code'
+      ListField = 'car_type_name'
+      ListSource = car_typeDataSource
+      TabOrder = 9
+    end
   end
   object buttonPanel: TPanel
     Left = 0
     Top = 392
-    Width = 406
+    Width = 413
     Height = 37
     Align = alBottom
     Font.Charset = SHIFTJIS_CHARSET
@@ -286,15 +287,14 @@ object radio_noForm: Tradio_noForm
     ParentFont = False
     TabOrder = 1
     TabStop = True
-    ExplicitTop = 194
-    ExplicitWidth = 392
     object closeButton: TButton
-      Left = 8
+      Left = 15
       Top = 6
       Width = 75
       Height = 25
       Caption = #38281#12376#12427
       TabOrder = 0
+      OnClick = closeButtonClick
     end
     object end_carButton: TButton
       Left = 96
@@ -306,19 +306,23 @@ object radio_noForm: Tradio_noForm
     end
   end
   object car_typeDataSource: TDataSource
-    Left = 8
-    Top = 80
+    DataSet = DBConnModule.cartypeQuery
+    Left = 344
+    Top = 288
   end
   object officeDataSource: TDataSource
-    Left = 184
-    Top = 32
+    DataSet = DBConnModule.officeQuery
+    Left = 256
+    Top = 288
   end
   object radioDataSource: TDataSource
-    Left = 320
-    Top = 203
+    DataSet = DBConnModule.radioQuery
+    Left = 168
+    Top = 291
   end
   object gridDataSource: TDataSource
-    Left = 272
-    Top = 203
+    DataSet = DBConnModule.radioQuery
+    Left = 80
+    Top = 291
   end
 end

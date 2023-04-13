@@ -3,111 +3,197 @@
 interface
 
 uses
-Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.StdCtrls, Vcl.DBCtrls,
-Vcl.Grids, Vcl.DBGrids, Vcl.Mask, Vcl.ExtCtrls, DBConnectionModule, FireDAC.Stan.Param;
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.StdCtrls, Vcl.DBCtrls,
+  Vcl.Grids, Vcl.DBGrids, Vcl.Mask, Vcl.ExtCtrls, DBConnectionModule, FireDAC.Stan.Param,
+  Vcl.Printers;
 
 type
-TplaceForm = class(TForm)
-Panel1: TPanel;
-Label1: TLabel;
-Label2: TLabel;
-Label3: TLabel;
-nameDBEdit: TDBEdit;
-DBGrid1: TDBGrid;
-DBNavigator1: TDBNavigator;
-huriganaDBEdit: TDBEdit;
-cancelButton: TButton;
-postButton: TButton;
-newButton: TButton;
-codeDBEdit: TDBEdit;
-buttonPanel: TPanel;
-closeButton: TButton;
-printButton: TButton;
-placeDataSource: TDataSource;
-procedure postButtonClick(Sender: TObject);
-procedure FormCreate(Sender: TObject);
-procedure DBGrid1CellClick(Column: TColumn);
-procedure cancelButtonClick(Sender: TObject);
-procedure closeButtonClick(Sender: TObject);
-procedure newButtonClick(Sender: TObject);
-private
-{ Private declarations }
-public
-{ Public declarations }
-procedure LoadData;
-end;
+  TplaceForm = class(TForm)
+    Panel1: TPanel;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    nameDBEdit: TDBEdit;
+    DBGrid1: TDBGrid;
+    DBNavigator1: TDBNavigator;
+    huriganaDBEdit: TDBEdit;
+    cancelButton: TButton;
+    postButton: TButton;
+    newButton: TButton;
+    codeDBEdit: TDBEdit;
+    buttonPanel: TPanel;
+    closeButton: TButton;
+    printButton: TButton;
+    placeDataSource: TDataSource;
+    PrintDialog1: TPrintDialog; // <- 이 부분을 추가합니다.
+    procedure postButtonClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure DBGrid1CellClick(Column: TColumn);
+    procedure cancelButtonClick(Sender: TObject);
+    procedure closeButtonClick(Sender: TObject);
+    procedure newButtonClick(Sender: TObject);
+    procedure printButtonClick(Sender: TObject); // <- 이 부분을 추가합니다.
+  private
+    { Private declarations }
+      function GetMaxColumnWidth(AColumn: TColumn; ACanvas: TCanvas): Integer; // 함수를 여기에 추가하세요.
+  public
+    { Public declarations }
+    procedure LoadData;
+    procedure PrintDBGrid;
+  end;
 
 var
-placeForm: TplaceForm;
+  placeForm: TplaceForm;
 
 implementation
 
 {$R *.dfm}
 
 procedure TplaceForm.postButtonClick(Sender: TObject);
-  begin
+begin
   if placeDataSource.DataSet.State = dsInsert then
   begin
-  placeDataSource.DataSet.Insert;
-  LoadData;
-  ShowMessage('저장되었습니다.');
-end
-else if placeDataSource.DataSet.State = dsEdit then
+    placeDataSource.DataSet.Insert;
+    LoadData;
+    ShowMessage('保存が完了しました。');
+  end
+  else if placeDataSource.DataSet.State = dsEdit then
   begin
-  placeDataSource.DataSet.Post;
-  LoadData;
-  ShowMessage('저장되었습니다.');
+    placeDataSource.DataSet.Post;
+    LoadData;
+    ShowMessage('保存が完了しました。');
   end;
+end;
+
+procedure TplaceForm.printButtonClick(Sender: TObject); // <- 이 부분을 추가합니다.
+begin
+  PrintDBGrid;
 end;
 
 procedure TplaceForm.LoadData;
 begin
   DBConnModule.ConnectDB;
-  DBConnModule.ExecuteQuery1('SELECT * FROM PLACE');
-  placeDataSource.DataSet := DBConnModule.FDQuery1;
-  placeDataSource.DataSet.Open; // 데이터셋을 열어주는 코드를 추가합니다
+  DBConnModule.ExecuteQuery(DBConnModule.placeQuery, 'SELECT * FROM PLACE');
+  placeDataSource.DataSet := DBConnModule.placeQuery;
+  placeDataSource.DataSet.Open;
 end;
 
 procedure TplaceForm.FormCreate(Sender: TObject);
 begin
-postButton.Enabled := False;
-cancelButton.Enabled := False;
-LoadData;
+  postButton.Enabled := False;
+  cancelButton.Enabled := False;
+  LoadData;
 end;
 
 procedure TplaceForm.DBGrid1CellClick(Column: TColumn);
 begin
-if not (placeDataSource.DataSet.State in [dsInsert, dsEdit]) then
-begin
-newButton.Enabled := False;
-postButton.Enabled := True;
-cancelButton.Enabled := True;
+  if not (placeDataSource.DataSet.State in [dsInsert, dsEdit]) then
+  begin
+    newButton.Enabled := False;
+    postButton.Enabled := True;
+    cancelButton.Enabled := True;
+  end;
 end;
-end;
+
 
 procedure TplaceForm.cancelButtonClick(Sender: TObject);
 begin
-newButton.Enabled := True;
-postButton.Enabled := False;
-cancelButton.Enabled := False;
-LoadData;
+  newButton.Enabled := True;
+  postButton.Enabled := False;
+  cancelButton.Enabled := False;
+  LoadData;
 end;
 
 procedure TplaceForm.closeButtonClick(Sender: TObject);
 begin
-Close;
-
+  Close;
 end;
 
 procedure TplaceForm.newButtonClick(Sender: TObject);
-
 begin
-//  if officeDataSource.DataSet.State <> dsInsert then // 현재 레코드가 삽입 상태가 아닌 경우에만 추가 모드로 전환합니다.
-    placeDataSource.DataSet.Insert; // 새 레코드 추가
-    newButton.Enabled := False;
-    postButton.Enabled := True; // Enable the Post button when DBGrid is clicked
-    cancelButton.Enabled := True; // Enable the Cancel button when DBGrid is clicked
+  placeDataSource.DataSet.Insert; // 새 레코드 추가
+  newButton.Enabled := False;
+  postButton.Enabled := True; // Enable the Post button when DBGrid is clicked
+  cancelButton.Enabled := True; // Enable the Cancel button when DBGrid is clicked
 end;
+
+procedure TplaceForm.PrintDBGrid;
+var
+  i, j, X, Y, ColWidth, RowHeight: Integer;
+  CellText: string;
+  ColWidths: array of Integer;
+begin
+  if PrintDialog1.Execute then
+  begin
+    Printer.BeginDoc;
+    Printer.Canvas.Font.Size := 12;
+
+    SetLength(ColWidths, DBGrid1.Columns.Count);
+    RowHeight := Printer.Canvas.TextHeight('A') + 4;
+
+    Y := 100; // 시작 Y 좌표
+
+    // DBGrid의 헤더 출력
+    X := 100; // 시작 X 좌표
+    for i := 0 to DBGrid1.Columns.Count - 1 do
+    begin
+      CellText := DBGrid1.Columns[i].Title.Caption;
+      Printer.Canvas.TextOut(X + 2, Y + 2, CellText);
+
+      ColWidth := GetMaxColumnWidth(DBGrid1.Columns[i], Printer.Canvas);
+      ColWidths[i] := ColWidth;
+      X := X + ColWidth + 20; // 다음 열의 X 좌표를 계산
+    end;
+
+    // DBGrid의 내용 출력
+    Y := Y + RowHeight; // 다음 행의 Y 좌표를 계산
+    placeDataSource.DataSet.First; // 처음 레코드로 이동
+    for i := 0 to placeDataSource.DataSet.RecordCount - 1 do
+    begin
+      X := 100;
+      for j := 0 to DBGrid1.Columns.Count - 1 do
+      begin
+        CellText := placeDataSource.DataSet.Fields[j].AsString;
+        Printer.Canvas.TextOut(X + 2, Y + 2, CellText);
+
+        // 그리드 선 출력
+        Printer.Canvas.MoveTo(X, Y);
+        Printer.Canvas.LineTo(X, Y + RowHeight);
+        Printer.Canvas.LineTo(X + ColWidths[j] + 20, Y + RowHeight);
+        Printer.Canvas.LineTo(X + ColWidths[j] + 20, Y);
+
+        X := X + ColWidths[j] + 20; // 다음 열의 X 좌표를 계산
+      end;
+      Y := Y + RowHeight; // 다음 행의 Y 좌표를 계산
+      placeDataSource.DataSet.Next; // 다음 레코드
+    end;
+
+    // 마지막 열의 선 출력
+    Printer.Canvas.MoveTo(X, 100);
+    Printer.Canvas.LineTo(X, Y);
+
+    Printer.EndDoc;
+  end;
+end;
+function TplaceForm.GetMaxColumnWidth(AColumn: TColumn; ACanvas: TCanvas): Integer;
+var
+  i, MaxWidth, CurrentWidth: Integer;
+begin
+  MaxWidth := ACanvas.TextWidth(AColumn.Title.Caption);
+  AColumn.Field.DataSet.First;
+
+  for i := 0 to AColumn.Field.DataSet.RecordCount - 1 do
+  begin
+    CurrentWidth := ACanvas.TextWidth(AColumn.Field.AsString);
+    if CurrentWidth > MaxWidth then
+      MaxWidth := CurrentWidth;
+
+    AColumn.Field.DataSet.Next;
+  end;
+
+  Result := MaxWidth;
+end;
+
 
 end.

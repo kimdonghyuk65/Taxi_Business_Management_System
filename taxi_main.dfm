@@ -36,9 +36,8 @@ object taxi_mainForm: Ttaxi_mainForm
     ParentDoubleBuffered = False
     TabOrder = 1
     TabStop = True
-    ExplicitTop = 27
     object Label2: TLabel
-      Left = 15
+      Left = 48
       Top = 40
       Width = 988
       Height = 99
@@ -1096,7 +1095,7 @@ object taxi_mainForm: Ttaxi_mainForm
       end
       object yusouButton: TButton
         Left = 179
-        Top = 80
+        Top = 87
         Width = 217
         Height = 41
         BiDiMode = bdLeftToRight
